@@ -46,26 +46,38 @@ namespace RSound_A
 
             if (openSound.ShowDialog() == DialogResult.OK) {
                 SoundPath = openSound.FileName;
-                txtBoxSoundPath.Text = SoundPath;              
-                statusLbl.ForeColor = Color.Green;
-                statusLbl.Text = "Sound opened with success!";
+                txtBoxSoundPath.Text = SoundPath;
+                ChangeStatus("Sound opened with success!", Color.Green);)
+              
             }
 
         }
 
+        private void ChangeStatus(string Message, Color fontColor) {
+            statusLbl.Text = Message;
+            statusLbl.ForeColor = fontColor;
+        }
+
         private void button1_Click(object sender, EventArgs e) {
-            MessageBox.Show(SoundPath);
+
             AudioFileReader ReadedSound = new AudioFileReader(@SoundPath);
             int soundSize = Convert.ToInt32(ReadedSound.Length);
             var frequencyArray = new float[soundSize];
             ReadedSound.Read(frequencyArray, 0, soundSize);
+            ChangeStatus("Crypting your sound ...", Color.Black);
+            try {
+                for (int i = 0; i < frequencyArray.Length; i++) {
+                    FrequencyList.Add(frequencyArray[i]);
 
-            for (int i = 0; i < frequencyArray.Length; i++)
-            {
-
-                FrequencyList.Add(frequencyArray[i]);
-                MessageBox.Show(frequencyArray[i].ToString());
+                }
             }
+            catch (Exception error) {
+                MessageBox.Show(error.Message, null , MessageBoxButtons.OK , MessageBoxIcon.Error);
+                ChangeStatus("An error happened !", Color.Red);
+
+            }
+            ChangeStatus("Done !", Color.Green);
+
         }
     }
 }
