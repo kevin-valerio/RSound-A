@@ -8,21 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NAudio.Wave;
+using NAudio;
+using System.IO;
+
 namespace RSound_A
 {
     
     public partial class PrimaryForm : Form
     {
         private List<float> FrequencyList = new List<float>();
-
         private String SoundPath = String.Empty;
-
  
         public PrimaryForm() {
             InitializeComponent();
-        }
-
-     
+        }     
 
         private void CreateFrequencyList() {
 
@@ -47,7 +46,7 @@ namespace RSound_A
             if (openSound.ShowDialog() == DialogResult.OK) {
                 SoundPath = openSound.FileName;
                 txtBoxSoundPath.Text = SoundPath;
-                ChangeStatus("Sound opened with success!", Color.Green);)
+                ChangeStatus("Sound opened with success!", Color.Green);
               
             }
 
@@ -58,7 +57,17 @@ namespace RSound_A
             statusLbl.ForeColor = fontColor;
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void ExportSound(String path, List<float> myFrequencies)
+        {
+            //Prend chaque List<float>:float de myFrequencies et exporte le fichier à String:path
+            string tempFile = Path.Combine(path);
+            WaveFormat waveFormat = new WaveFormat(8000, 8, 2);
+            WaveStream sourceStream = new NullWaveStream(waveFormat, 10000);
+            WaveFileWriter.CreateWaveFile(tempFile, sourceStream);
+        }
+
+
+        private void btnCrypt_click(object sender, EventArgs e) {
 
             AudioFileReader ReadedSound = new AudioFileReader(@SoundPath);
             int soundSize = Convert.ToInt32(ReadedSound.Length);
@@ -78,6 +87,27 @@ namespace RSound_A
             }
             ChangeStatus("Done !", Color.Green);
 
+            if(checkExportSound.Checked == true) {
+                String path = String.Empty;
+                SaveFileDialog exportSoundDialog = new SaveFileDialog()
+                {
+                    Filter = "WAV Files|*.wav",
+                    Title = "Save the sound"
+                };
+
+                if (exportSoundDialog.ShowDialog() == DialogResult.OK) {
+                    path = exportSoundDialog.FileName;
+                }
+                try {
+                    ExportSound(path, FrequencyList);
+                    ChangeStatus("Sound exported with success!", Color.Green);
+
+                }
+                catch (Exception error) {
+                    MessageBox.Show(error.Message, null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
         }
     }
 }
