@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using NAudio.Wave;
 using NAudio;
 using System.IO;
+using NAudio.Wave.Compression;
 
 namespace RSound_A
 {
@@ -57,15 +58,33 @@ namespace RSound_A
             statusLbl.ForeColor = fontColor;
         }
 
+        public static byte[] GetSamplesWaveData(List<float> samples, int samplesCount) {
+            var pcm = new byte[samplesCount * 2];
+            int sampleIndex = 0,
+                pcmIndex = 0;
+
+            while (sampleIndex < samplesCount)
+            {
+                var outsample = (short)(samples[sampleIndex] * short.MaxValue);
+                pcm[pcmIndex] = (byte)(outsample & 0xff);
+                pcm[pcmIndex + 1] = (byte)((outsample >> 8) & 0xff);
+
+                sampleIndex++;
+                pcmIndex += 2;
+            }
+
+            return pcm;
+        }
+
         private void ExportSound(String path, List<float> myFrequencies)
         {
             //Prend chaque List<float>:float de myFrequencies et exporte le fichier à String:path
-            string tempFile = Path.Combine(path);
-            WaveFormat waveFormat = new WaveFormat(8000, 8, 2);
-            WaveStream sourceStream = new NullWaveStream(waveFormat, 10000);
-            WaveFileWriter.CreateWaveFile(tempFile, sourceStream);
-        }
 
+            MemoryStream convertedStream = new MemoryStream(GetSamplesWaveData(myFrequencies, myFrequencies.Count));
+            IWaveProvider provider = new RawSourceWaveStream(  convertedStream, new WaveFormat());
+            WaveFileWriter.CreateWaveFile(path, provider);
+                 
+        } 
 
         private void btnCrypt_click(object sender, EventArgs e) {
 
@@ -74,10 +93,11 @@ namespace RSound_A
             var frequencyArray = new float[soundSize];
             ReadedSound.Read(frequencyArray, 0, soundSize);
             ChangeStatus("Crypting your sound ...", Color.Black);
+
             try {
                 for (int i = 0; i < frequencyArray.Length; i++) {
                     FrequencyList.Add(frequencyArray[i]);
-
+                    
                 }
             }
             catch (Exception error) {
@@ -98,6 +118,10 @@ namespace RSound_A
                 if (exportSoundDialog.ShowDialog() == DialogResult.OK) {
                     path = exportSoundDialog.FileName;
                 }
+
+                ExportSound(path, FrequencyList);
+                ChangeStatus("Sound exported with success!", Color.Green);
+
                 try {
                     ExportSound(path, FrequencyList);
                     ChangeStatus("Sound exported with success!", Color.Green);
