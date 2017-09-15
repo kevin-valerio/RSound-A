@@ -64,12 +64,20 @@ namespace RSound_A
             int soundSize = Convert.ToInt32(ReadedSound.Length);
             var frequencyArray = new float[soundSize];
             ReadedSound.Read(frequencyArray, 0, soundSize);
+            ChangeStatus("Crypting your sound ...", Color.Black);
+            try {
+                for (int i = 0; i < frequencyArray.Length; i++) {
+                    FrequencyList.Add(frequencyArray[i]);
 
-            for (int i = 0; i < frequencyArray.Length; i++) {
-                ChangeStatus("Crypting your sound ...", Color.Black);
-                FrequencyList.Add(frequencyArray[i]);
-                 
+                }
             }
+            catch (Exception error) {
+                MessageBox.Show(error.Message, null , MessageBoxButtons.OK , MessageBoxIcon.Error);
+                ChangeStatus("An error happened !", Color.Red);
+
+            }
+            ChangeStatus("Done !", Color.Green);
+
         }
     }
 }
