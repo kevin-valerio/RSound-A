@@ -34,7 +34,8 @@
             this.statusLbl = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBoxSoundPath = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCrypt = new System.Windows.Forms.Button();
+            this.checkExportSound = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,22 +87,35 @@
             this.txtBoxSoundPath.Size = new System.Drawing.Size(230, 20);
             this.txtBoxSoundPath.TabIndex = 3;
             // 
-            // button1
+            // btnCrypt
             // 
-            this.button1.Location = new System.Drawing.Point(12, 152);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(199, 34);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Crypt the file";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCrypt.Location = new System.Drawing.Point(12, 152);
+            this.btnCrypt.Name = "btnCrypt";
+            this.btnCrypt.Size = new System.Drawing.Size(155, 34);
+            this.btnCrypt.TabIndex = 0;
+            this.btnCrypt.Text = "Crypt the sound";
+            this.btnCrypt.UseVisualStyleBackColor = true;
+            this.btnCrypt.Click += new System.EventHandler(this.btnCrypt_click);
+            // 
+            // checkExportSound
+            // 
+            this.checkExportSound.AutoSize = true;
+            this.checkExportSound.Checked = true;
+            this.checkExportSound.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkExportSound.Location = new System.Drawing.Point(15, 192);
+            this.checkExportSound.Name = "checkExportSound";
+            this.checkExportSound.Size = new System.Drawing.Size(128, 17);
+            this.checkExportSound.TabIndex = 4;
+            this.checkExportSound.Text = "Also export the sound";
+            this.checkExportSound.UseVisualStyleBackColor = true;
             // 
             // PrimaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(271, 256);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.checkExportSound);
+            this.Controls.Add(this.btnCrypt);
             this.Controls.Add(this.statusLbl);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -122,7 +136,8 @@
         private System.Windows.Forms.Label statusLbl;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtBoxSoundPath;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCrypt;
+        private System.Windows.Forms.CheckBox checkExportSound;
     }
 }
 
