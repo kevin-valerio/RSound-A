@@ -79,7 +79,11 @@ namespace RSound_A
         private void ExportSound(String path, List<float> myFrequencies)
         {
             //Prend chaque List<float>:float de myFrequencies et exporte le fichier à String:path
-
+            /*
+             * TODO : Regler le problème de fréquence
+             * sonPure= 787,401575 Hz
+             * sonGenere= 1443,00144 Hz
+             */
             MemoryStream convertedStream = new MemoryStream(GetSamplesWaveData(myFrequencies, myFrequencies.Count));
             IWaveProvider provider = new RawSourceWaveStream(  convertedStream, new WaveFormat());
             WaveFileWriter.CreateWaveFile(path, provider);
