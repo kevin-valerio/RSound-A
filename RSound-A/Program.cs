@@ -20,3 +20,16 @@ namespace RSound_A
         }
     }
 }
+
+
+namespace Encryption
+{
+    public class RSA
+    {
+        public RSA()
+        {
+            //Constructeur
+        }
+
+    }
+}
