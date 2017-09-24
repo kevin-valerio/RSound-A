@@ -61,7 +61,7 @@
             // 
             this.statusLbl.AutoSize = true;
             this.statusLbl.ForeColor = System.Drawing.Color.Red;
-            this.statusLbl.Location = new System.Drawing.Point(68, 126);
+            this.statusLbl.Location = new System.Drawing.Point(61, 126);
             this.statusLbl.Name = "statusLbl";
             this.statusLbl.Size = new System.Drawing.Size(143, 13);
             this.statusLbl.TabIndex = 2;
@@ -73,7 +73,7 @@
             this.groupBox1.Controls.Add(this.importBtn);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(242, 94);
+            this.groupBox1.Size = new System.Drawing.Size(262, 94);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Import";
@@ -83,14 +83,14 @@
             this.txtBoxSoundPath.Location = new System.Drawing.Point(6, 28);
             this.txtBoxSoundPath.Name = "txtBoxSoundPath";
             this.txtBoxSoundPath.ReadOnly = true;
-            this.txtBoxSoundPath.Size = new System.Drawing.Size(230, 20);
+            this.txtBoxSoundPath.Size = new System.Drawing.Size(250, 20);
             this.txtBoxSoundPath.TabIndex = 3;
             // 
             // btnCrypt
             // 
-            this.btnCrypt.Location = new System.Drawing.Point(12, 152);
+            this.btnCrypt.Location = new System.Drawing.Point(18, 152);
             this.btnCrypt.Name = "btnCrypt";
-            this.btnCrypt.Size = new System.Drawing.Size(155, 34);
+            this.btnCrypt.Size = new System.Drawing.Size(134, 30);
             this.btnCrypt.TabIndex = 0;
             this.btnCrypt.Text = "Crypt the sound";
             this.btnCrypt.UseVisualStyleBackColor = true;
@@ -101,7 +101,7 @@
             this.checkExportSound.AutoSize = true;
             this.checkExportSound.Checked = true;
             this.checkExportSound.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkExportSound.Location = new System.Drawing.Point(15, 192);
+            this.checkExportSound.Location = new System.Drawing.Point(156, 163);
             this.checkExportSound.Name = "checkExportSound";
             this.checkExportSound.Size = new System.Drawing.Size(128, 17);
             this.checkExportSound.TabIndex = 4;
@@ -112,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(271, 256);
+            this.ClientSize = new System.Drawing.Size(286, 195);
             this.Controls.Add(this.checkExportSound);
             this.Controls.Add(this.btnCrypt);
             this.Controls.Add(this.statusLbl);

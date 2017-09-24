@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using NAudio.Wave;
 using System.IO;
+using Encryption;
 
 namespace RSound_A
 {
@@ -11,9 +12,9 @@ namespace RSound_A
 
     public partial class PrimaryForm : Form
     {
-        private List<float> FrequencyList = new List<float>();
+        private List<float> HauteurCryptees = new List<float>();
         private String SoundPath = String.Empty;
-        private int Frequency;
+        private int Hauteur;
         private int Channel;
         public PrimaryForm() {
             InitializeComponent();
@@ -24,16 +25,19 @@ namespace RSound_A
             ChangeStatus("Crypting your sound ...", Color.Black);
 
             AudioFileReader ReadedSound = new AudioFileReader(path);
-            int soundSize = Convert.ToInt32(ReadedSound.Length);
-            var  frequencyArray = new float[soundSize];
+            int SoundSize = Convert.ToInt32(ReadedSound.Length);
+            var  HauteurArray = new float[SoundSize];
 
-            ReadedSound.Read(frequencyArray, 0, soundSize);
-            Frequency = ReadedSound.WaveFormat.SampleRate;
+            ReadedSound.Read(HauteurArray, 0, SoundSize);
+            Hauteur = ReadedSound.WaveFormat.SampleRate;
             Channel = ReadedSound.WaveFormat.Channels;
+            RSA PreparedRSA = new RSA();
+            PreparedRSA.GenerateKey();
 
-            for (int i = 0; i < frequencyArray.Length; i++) {
-                FrequencyList.Add((frequencyArray[i]));
+            for (int i = 0; i < HauteurArray.Length; i++) {
 
+                HauteurCryptees.Add(PreparedRSA.Crypt(HauteurArray[i]) * (float) 10e30);
+ 
             }
 
         }
@@ -77,13 +81,13 @@ namespace RSound_A
             return pcm;
         }
 
-        private void ExportSound(String path, List<float> myFrequencies, int channel, int frequency)
+        private void ExportSound(String path, List<float> myFrequencies, int channel, int Hauteur)
         {
             //Frequence d'analyse : 44,100 Hz et channel : 1
             /* Où Wave désigne le format .wav */
 
             MemoryStream convertedStream = new MemoryStream(GetSamplesWaveData(myFrequencies));
-            IWaveProvider provider = new RawSourceWaveStream(convertedStream, new WaveFormat(frequency, channel));
+            IWaveProvider provider = new RawSourceWaveStream(convertedStream, new WaveFormat(Hauteur, channel));
             WaveFileWriter.CreateWaveFile(path, provider);
                  
         }
@@ -96,7 +100,7 @@ namespace RSound_A
             }
 
             catch (Exception error) {
-                MessageBox.Show(error.Message, null , MessageBoxButtons.OK , MessageBoxIcon.Error);
+                MessageBox.Show(error.Data + "\n" + error.Message + "\n" + error.Source, null , MessageBoxButtons.OK , MessageBoxIcon.Error);
                 ChangeStatus("An error happened !", Color.Red);
                 Application.Exit();
             }
@@ -116,12 +120,13 @@ namespace RSound_A
  
 
                 try {
-                    ExportSound(path, FrequencyList, Channel, Frequency);
+                    ExportSound(path, HauteurCryptees, Channel, Hauteur);
                     ChangeStatus("Sound exported with success!", Color.Green);
 
                 }
                 catch (Exception error) {
-                    MessageBox.Show(error.Message, null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(error.Data + "\n" + error.Message + "\n" + error.Source, null, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
 
             }
