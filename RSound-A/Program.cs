@@ -8,7 +8,7 @@ namespace RSound_A
 {
     static class Program
     {
- 
+
         [STAThread]
         static void Main()
         {
@@ -24,31 +24,53 @@ namespace Encryption
 {
     public class RSA
     {
-        public RSA()
+        private static long encryptedNumber;
+        private static long privateKey;
+        private static List<long> publickey;
+
+        public RSA(long toCrypt)
         {
-            /* Git test */
+            GenerateKey();
+        }
+
+        public static long Crypt(long toCrypt)
+        {
+            return PowerModulo(toCrypt, publickey[1], publickey[0]);
+        }
+
+        public static long Decrypt(long toDecrypt)
+        {
+            return PowerModulo(toDecrypt, privateKey, publickey[0]);
         }
 
         public void GenerateKey()
         {
 
+            RSAKey PublicRSAKey = new RSAKey();
+            publickey = PublicRSAKey.GetPublicKey();
+
+            RSAKey PrivateKey = new RSAKey();
+            privateKey = PublicRSAKey.GetPrivateKey();
+
         }
 
-        private static int Exposant(int M, int c)
+        public static long PowerModulo(long M, long e, long mod)
         {
-            // M^c
-            while (true) {
-
-            }
+            //Calcul de c = M^e [mod]
+            long c = 1;
+            for (long a = 1; a < e; ++a) 
+                c = (c * M) % mod;
+            return c;
         }
+
     }
 
+}
 
+public class RSAKey
+{
 
-    public class RSAKeys
-    {
-
-        private static List<long> PrimaryNumbers = new List<long>{
+    private static List<long> PrimaryNumbers = new List<long>{
             7009421, 7009427, 7009447, 7009469, 7009477, 7009481,
             7009487, 7009493, 7009507, 7009517, 7009543, 7009547, 7009553, 7009577, 7009601, 7009603, 7009609,
             7009663, 7009669, 7009699, 7009711, 7009757, 7009771, 7009777, 7009799, 7009801, 7009823, 7009859,
@@ -62,64 +84,64 @@ namespace Encryption
         };
 
 
-        private static long Q;
-        private static long P;
-        private static long N;
-        private static long E;
+    private static long Q;
+    private static long P;
+    private static long N;
+    private static long E;
 
-        private static long GetRandomPrimaryNumber()
-        {
-            return PrimaryNumbers[new Random().Next(0, PrimaryNumbers.Count)];
-        }
+    private static long GetRandomPrimaryNumber()
+    {
+        return PrimaryNumbers[new Random().Next(0, PrimaryNumbers.Count)];
+    }
 
-        private static long GetEulerIndicator()
-        {
-            return (P - 1) * (Q - 1);
-        }
+    private static long GetEulerIndicator()
+    {
+        return (P - 1) * (Q - 1);
+    }
 
-        private static long PGCD(long a, long b)
-        {
-            long modulo = a % b;
-            if (modulo == 0) return b;
-            return PGCD(b, modulo);
-        }
+    private static long PGCD(long a, long b)
+    {
+        long modulo = a % b;
+        if (modulo == 0) return b;
+        return PGCD(b, modulo);
+    }
 
-        private static long GetEncryptionExponent()
-        {
+    private static long GetEncryptionExponent()
+    {
 
-            Random rnd = new Random();
-            while (true) {
-                long e = rnd.Next();
-                if ((PGCD(e, GetEulerIndicator()) == 1) && (e < GetEulerIndicator()))
-                    return e;
-            }
-
-        }
-
-        public static List<long> GetPublicKey()
-        {
-            Q = GetRandomPrimaryNumber();
-            P = GetRandomPrimaryNumber();
-            N = (Q * P);
-            E = GetEncryptionExponent();
-
-            return new List<long> {N, E};
-        }
-
-        public static long GetPrivateKey()
-        {
-            return 1;   
-        }
-
-        
-
-        private static long GetDecryptionExponent()
-        {
-            //calculer l'entier naturel d, inverse de e modulo φ(n), et strictement inférieur à φ(n), 
-            //appelé exposant de déchiffrement ; d peut se calculer efficacement par l'algorithme d'Euclide étendu.
-
-            return 1;
+        Random rnd = new Random();
+        while (true) {
+            long e = rnd.Next();
+            if ((PGCD(e, GetEulerIndicator()) == 1) && (e < GetEulerIndicator()))
+                return e;
         }
 
     }
+
+    public List<long> GetPublicKey()
+    {
+        Q = GetRandomPrimaryNumber();
+        P = GetRandomPrimaryNumber();
+        N = (Q * P);
+        E = GetEncryptionExponent();
+
+        return new List<long> { N, E };
+    }
+
+    public long GetPrivateKey()
+    {
+        return GetDecryptionExponent();
+    }
+
+
+
+    private static long GetDecryptionExponent()
+    {
+        //calculer l'entier naturel d, inverse de e modulo φ(n), et strictement inférieur à φ(n), 
+        //appelé exposant de déchiffrement ; d peut se calculer efficacement par l'algorithme d'Euclide étendu.
+        //return d * e congrue 1 mod phi(n)
+
+        return 1;
+    }
+
 }
