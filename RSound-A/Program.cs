@@ -56,7 +56,7 @@ namespace Encryption
         public static float PowerModulo(float M, float e, float mod)
         {
             //Calcul de c = M^e [mod]
-            float c = 1;
+            float c = M;
             for (float a = 1; a < e; ++a) 
                 c = (M * c) % mod;
             return c;
@@ -114,6 +114,8 @@ public class RSAKey
          float modulo = a % b;
         if (modulo == 0) return b;
         return PGCD(b, modulo);
+        
+       // return (a%b==0) ? b : (PGCD(b, a%b));
     }
 
     private static float GetEncryptionExponent()
