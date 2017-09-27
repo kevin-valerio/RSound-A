@@ -161,6 +161,7 @@ public class RSAKey
 
     private static float modInverse(float a, float n)
     {
+        //Marche pas
         float i = n, v = 0, d = 1;
         while (a > 0) {
             float t = i / a, x = a;
