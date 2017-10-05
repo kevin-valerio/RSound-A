@@ -11,9 +11,8 @@ void afficheMatrice(vector<vector<int>> MatriceOperation){
      }
 }
 
-void Bezout(float X, float Y){
-
-    vector<vector<int>> MatriceOperation;
+ void Bezout(int X, int Y){
+     vector<vector<int>> MatriceOperation;
     int a,b,q,r;
 
     a = X;
@@ -38,7 +37,7 @@ void Bezout(float X, float Y){
      }
 
     int nombreEtape = MatriceOperation.size();
-    int A,B,U,V;
+    int A,B,U,V= 0;
 
     for(unsigned i(0); i < nombreEtape -1 ; ++i){
 
@@ -50,41 +49,44 @@ void Bezout(float X, float Y){
     }
 
      /*
-             a[i]     q[i]    b[i]    r[i]
-             1000   =  3  ×   257  +  229
-             257   =   1  ×   229  +   28
-             229   =   8  ×    28  +    5
-             28   =    5  ×     5  +    3
-             5   =    q 1  ×     3  +    2
-             3   =     1  ×     2  +    1
-
+              a[i]     q[i]    b[i]    r[i]
+     0        1000   =  3  ×   257  +  229
+     1        257   =   1  ×   229  +   28
+     2        229   =   8  ×    28  +    5
+     3        28   =    5  ×     5  +    3
+     4        5   =     1  ×     3  +    2
+     5        3   =     1  ×     2  +    1
+     6        2   =     2  ×     1  +    0
     */
 
      U = 1;
-     B = MatriceOperation[nombreEtape -1][2];
-     A = MatriceOperation[nombreEtape -1][0];
-     V = -(MatriceOperation[nombreEtape -1][1]) ;
+     B = MatriceOperation[nombreEtape -2][2];
+     V = -(MatriceOperation[nombreEtape -2][1]);
+     A = MatriceOperation[nombreEtape -2][0];
 
-     int cpt = 0;
+     int cpt = nombreEtape - 1;
 
-     while(A != X && B != Y){
-        int tmp = U;
+     while( B != X && A != Y ){
 
-        ++cpt;
-        A = MatriceOperation[cpt-1][0];
-        U = V;
-        B = A;
-        V = tmp - (MatriceOperation[cpt-1][1]) * V;
+        --cpt;
 
+        int tmpU = U;
+        int tmpA = A;
+        int tmpV = V;
+
+        A = MatriceOperation[cpt - 1][0];
+        U = tmpV;
+        B = tmpA;
+        V = tmpU  - (MatriceOperation[cpt - 1][1]) * tmpV;
 
      }
-     cout << U << " " << B << " " << V << " " << A;
+     cout << "U = " << U << endl << endl <<  "B = " << B << " V =  " << V << " A = " << A<< endl;
 }
 
 int main()
 {
-    float X = 257;
-    float Y = 1000;
+    int X = 257;
+    int Y = 1000;
 
      Bezout(X, Y);
     //Doit afficher 393
