@@ -2,17 +2,24 @@
 #include <vector>
 using namespace std;
 
-void afficheMatrice(vector<vector<int>> MatriceOperation){
 
-    for(int x=0;x<MatriceOperation.size();x++) {
-         for(int y=0;y<MatriceOperation[x].size();y++)
-             cout << MatriceOperation[x][y] << "    ";
-         cout << endl;
-     }
-}
 
- void Bezout(int X, int Y){
-     vector<vector<int>> MatriceOperation;
+/* RAPPORT :
+*
+* Quel est le projet
+* Qu'avons nous fait
+* Comment on l'a fait
+* Quels sont les problèmes
+* Bien parler de maths
+* Qu'avons-nous réalisé (screen, vidéo, etc.)
+* ---
+* Qu'avons-nous pensé du projet ?
+* Que voulions-nous faire de plus ?
+* ___________________
+* 10min presentation, 5min questions
+*/
+ int Bezout(int X, int Y){
+    vector<vector<int>> MatriceOperation;
     int a,b,q,r;
 
     a = X;
@@ -45,7 +52,6 @@ void afficheMatrice(vector<vector<int>> MatriceOperation){
         q = MatriceOperation[i][1];
         b = MatriceOperation[i][2];
         r = MatriceOperation[i][3];
-        // cout << a << " = " << q << "×" << b << " + " << r << endl;
     }
 
      /*
@@ -59,37 +65,40 @@ void afficheMatrice(vector<vector<int>> MatriceOperation){
      6        2   =     2  ×     1  +    0
     */
 
-     U = 1;
-     B = MatriceOperation[nombreEtape -2][2];
-     V = -(MatriceOperation[nombreEtape -2][1]);
-     A = MatriceOperation[nombreEtape -2][0];
+     V = 1;
+     A = MatriceOperation[nombreEtape -2][2];
+     U = -(MatriceOperation[nombreEtape -2][1]);
+     B = MatriceOperation[nombreEtape -2][0];
 
-     int cpt = nombreEtape - 1;
+     unsigned cpt = nombreEtape - 1;
+     while(cpt != 1){
+         --cpt;
 
-     while( B != X && A != Y ){
+             int tmpV = V;
+             int tmpB = B;
+             int tmpU = U;
 
-        --cpt;
+             B = MatriceOperation[cpt - 1][0];
+             V = tmpU;
+             A = tmpB;
+             U = tmpV  - (MatriceOperation[cpt - 1][1]) * U;
+        }
+    if(U < 0){
 
-        int tmpU = U;
-        int tmpA = A;
-        int tmpV = V;
+        for(unsigned k(1); U < 0; ++k)
+            U = U + k * B;
+    }
 
-        A = MatriceOperation[cpt - 1][0];
-        U = tmpV;
-        B = tmpA;
-        V = tmpU  - (MatriceOperation[cpt - 1][1]) * tmpV;
+    return U;
 
-     }
-     cout << "U = " << U << endl << endl <<  "B = " << B << " V =  " << V << " A = " << A<< endl;
 }
 
 int main()
 {
-    int X = 257;
-    int Y = 1000;
+    int X = 1000;
+    int Y = 257;
 
-     Bezout(X, Y);
-    //Doit afficher 393
+     cout << Bezout(X, Y);
 
     return 0;
 }
