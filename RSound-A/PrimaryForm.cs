@@ -23,7 +23,7 @@ namespace RSound_A
  
         private void CreateHauteurListAndCrypt(String path) {
 
-            ChangeStatus("Crypting your sound ...", Color.Black);
+            ChangeStatus("Crypting your sound ...", FlatUI.FlatAlertBox._Kind.Info);
 
             AudioFileReader ReadedSound = new AudioFileReader(path);
             int SoundSize = Convert.ToInt32(ReadedSound.Length);
@@ -61,15 +61,15 @@ namespace RSound_A
             if (openSound.ShowDialog() == DialogResult.OK) {
                 SoundPath = openSound.FileName;
                 txtBoxSoundPath.Text = SoundPath;
-                ChangeStatus("Sound opened with success!", Color.Green);
+                ChangeStatus("Sound opened with success!", FlatUI.FlatAlertBox._Kind.Success);
               
             }
 
         }
 
-        private void ChangeStatus(string Message, Color fontColor) {
+        private void ChangeStatus(string Message, FlatUI.FlatAlertBox._Kind kind) {
             statusLbl.Text = Message;
-            statusLbl.ForeColor = fontColor;
+            statusLbl.kind = kind;
         }
 
         public static byte[] GetSamplesWaveData(List<float> samples) {
@@ -109,10 +109,10 @@ namespace RSound_A
 
             catch (Exception error) {
                 MessageBox.Show(error.Data + "\n" + error.Message + "\n" + error.Source, null , MessageBoxButtons.OK , MessageBoxIcon.Error);
-                ChangeStatus("An error happened !", Color.Red);
+                ChangeStatus("An error happened !", FlatUI.FlatAlertBox._Kind.Error);
                 Application.Exit();
             }
-            ChangeStatus("Done !", Color.Green);
+            ChangeStatus("Done with success!", FlatUI.FlatAlertBox._Kind.Success);
 
             if(checkExportSound.Checked == true) {
                 String path = String.Empty;
@@ -124,12 +124,11 @@ namespace RSound_A
 
                 if (exportSoundDialog.ShowDialog() == DialogResult.OK) {
                     path = exportSoundDialog.FileName;
-                }
- 
+                } 
 
                 try {
                     ExportSound(path, HauteurCryptees, Channel, Hauteur);
-                    ChangeStatus("Sound exported with success!", Color.Green);
+                    ChangeStatus("Sound exported with success!", FlatUI.FlatAlertBox._Kind.Success);
 
                 }
                 catch (Exception error) {
@@ -140,9 +139,9 @@ namespace RSound_A
             }
         }
 
-        private void PrimaryForm_Load(object sender, EventArgs e)
+        private void btnCrypt_Click_1(object sender, EventArgs e)
         {
-          
+
         }
     }
 }
