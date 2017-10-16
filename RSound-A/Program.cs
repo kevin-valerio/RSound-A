@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -27,6 +27,8 @@ namespace Encryption
         public static int privateKey;
         public static List<int> publickey;
 
+        public int getPrivateKey() { return privateKey; }
+        public List<int> getPublickey() { return publickey; }
         public RSA()
         {
            // GenerateKey();
@@ -41,6 +43,8 @@ namespace Encryption
         {
             return PowerModulo(toDecrypt, privateKey, publickey[0]);
         }
+
+
 
         public void GenerateKey()
         {
@@ -118,7 +122,6 @@ public class RSAKey
         Random rnd = new Random();
         while (true) {
             int e = rnd.Next(0, 100);
-             //MessageBox.Show(Phi.ToString());
 
             if ((PGCD(e, ((P - 1) * (Q - 1))) == 1) && (e < Phi)) {
                 return e;
@@ -153,20 +156,105 @@ public class RSAKey
     }
 
 
-    private static int modInverse(int a, int n)
+    public static int modInverse(int X, int Y)
     {
-        //Marche pas
-        int i = n, v = 0, d = 1;
-        while (a > 0) {
-            int t = i / a, x = a;
-            a = i % x;
-            i = x;
-            x = d;
-            d = v - t * x;
-            v = x;
-        }
-        v %= n;
-        if (v < 0) v = (v + n) % n;
-        return v;
+
+
+        /* RAPPORT :
+        *
+        * Quel est le projet
+        * Qu'avons nous fait
+        * Comment on l'a fait
+        * Quels sont les problèmes
+        * Bien parler de maths
+        * Qu'avons-nous réalisé (screen, vidéo, etc.)
+        * ---
+        * Qu'avons-nous pensé du projet ?
+        * Que voulions-nous faire de plus ?
+        * ___________________
+        * 10min presentation, 5min questions
+        */
+       
+            List<List<int>> MatriceOperation =  new List<List<int>>();
+
+            int a, b, q, r;
+
+            a = X;
+            b = Y;
+            r = a % b;
+            q = a / b;
+
+            while (true)
+            {
+
+                List<int> futureLigne = new List<int>();
+                a = b;
+                b = r;
+                r = a % b;
+                q = a / b;
+                futureLigne.Add(a);
+                futureLigne.Add(q);
+                futureLigne.Add(b);
+                futureLigne.Add(r);
+                MatriceOperation.Add(futureLigne);
+                if (r == 0) break;
+
+            }
+
+            int nombreEtape = MatriceOperation.Count();
+            int A, B, U, V = 0;
+
+            for (int i = 0; i < nombreEtape - 1; ++i)
+            {
+
+                a = MatriceOperation[i][0];
+                q = MatriceOperation[i][1];
+                b = MatriceOperation[i][2];
+                r = MatriceOperation[i][3];
+            }
+
+            /*
+                     a[i]     q[i]    b[i]    r[i]
+            0        1000   =  3  ×   257  +  229
+            1        257   =   1  ×   229  +   28
+            2        229   =   8  ×    28  +    5
+            3        28   =    5  ×     5  +    3
+            4        5   =     1  ×     3  +    2
+            5        3   =     1  ×     2  +    1
+            6        2   =     2  ×     1  +    0
+           */
+
+            V = 1;
+            A = MatriceOperation[nombreEtape - 2][2];
+            U = -(MatriceOperation[nombreEtape - 2][1]);
+            B = MatriceOperation[nombreEtape - 2][0];
+
+            int cpt = nombreEtape - 1;
+            while (cpt != 1)
+            {
+                --cpt;
+
+                int tmpV = V;
+                int tmpB = B;
+                int tmpU = U;
+
+                B = MatriceOperation[cpt - 1][0];
+                V = tmpU;
+                A = tmpB;
+                U = tmpV - (MatriceOperation[cpt - 1][1]) * U;
+            }
+            if (U < 0)
+            {
+
+                for (int k = 0; U < 0; ++k)
+                    U = U + k * B;
+            }
+
+            return U;
+
+       
+
+       
+
     }
 }
