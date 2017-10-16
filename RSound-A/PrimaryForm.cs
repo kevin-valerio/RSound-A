@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -14,6 +14,7 @@ namespace RSound_A
     {
         private List<float> HauteurCryptees = new List<float>();
         private String SoundPath = String.Empty;
+        private byte Multiplier = Convert.ToByte(12);
         private int Hauteur;
         private int Channel;
         public PrimaryForm() {
@@ -26,17 +27,22 @@ namespace RSound_A
 
             AudioFileReader ReadedSound = new AudioFileReader(path);
             int SoundSize = Convert.ToInt32(ReadedSound.Length);
-            var  HauteurArray = new float[SoundSize];
+            byte[]  HauteurArray= new byte[SoundSize];
 
             ReadedSound.Read(HauteurArray, 0, SoundSize);
             Hauteur = ReadedSound.WaveFormat.SampleRate;
             Channel = ReadedSound.WaveFormat.Channels;
+
             RSA PreparedRSA = new RSA();
             PreparedRSA.GenerateKey();
 
+            for(int a = 0; a < HauteurArray.Length; ++a)
+            {
+                HauteurArray[a] *= Multiplier;
+            }
             for (int i = 0; i < HauteurArray.Length; i++) {
 
-                HauteurCryptees.Add(PreparedRSA.Crypt(HauteurArray[i]) * (float) 10e30);
+                HauteurCryptees.Add(PreparedRSA.Crypt(HauteurArray[i]));
  
             }
 
@@ -45,6 +51,8 @@ namespace RSound_A
 
         private void importBtn_click(object sender, EventArgs e)
         {
+
+          
             OpenFileDialog openSound = new OpenFileDialog() {
                 Filter = "WAV Files|*.wav",
                 Title = "Please, select a .wav file"
@@ -130,6 +138,11 @@ namespace RSound_A
                 }
 
             }
+        }
+
+        private void PrimaryForm_Load(object sender, EventArgs e)
+        {
+          
         }
     }
 }
