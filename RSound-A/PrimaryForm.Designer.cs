@@ -29,6 +29,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrimaryForm));
             this.RSoundA = new FlatUI.FormSkin();
+            this.flatLabel1 = new FlatUI.FlatLabel();
+            this.checkExportSound = new FlatUI.FlatToggle();
             this.flatGroupBox1 = new FlatUI.FlatGroupBox();
             this.statusLbl = new FlatUI.FlatAlertBox();
             this.importBtn = new FlatUI.FlatButton();
@@ -36,11 +38,13 @@
             this.txtBoxSoundPath = new FlatUI.FlatTextBox();
             this.flatMini1 = new FlatUI.FlatMini();
             this.flatClose1 = new FlatUI.FlatClose();
-            this.checkExportSound = new FlatUI.FlatToggle();
-            this.flatLabel1 = new FlatUI.FlatLabel();
+            this.flatGroupBox2 = new FlatUI.FlatGroupBox();
+            this.flatNumeric1 = new FlatUI.FlatNumeric();
+            this.flatLabel2 = new FlatUI.FlatLabel();
+            this.flatButton1 = new FlatUI.FlatButton();
             this.RSoundA.SuspendLayout();
             this.flatGroupBox1.SuspendLayout();
-
+            this.flatGroupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // RSoundA
@@ -48,6 +52,7 @@
             this.RSoundA.BackColor = System.Drawing.Color.White;
             this.RSoundA.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
             this.RSoundA.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(58)))), ((int)(((byte)(60)))));
+            this.RSoundA.Controls.Add(this.flatGroupBox2);
             this.RSoundA.Controls.Add(this.flatLabel1);
             this.RSoundA.Controls.Add(this.checkExportSound);
             this.RSoundA.Controls.Add(this.flatGroupBox1);
@@ -60,9 +65,34 @@
             this.RSoundA.HeaderMaximize = false;
             this.RSoundA.Location = new System.Drawing.Point(0, 0);
             this.RSoundA.Name = "RSoundA";
-            this.RSoundA.Size = new System.Drawing.Size(395, 303);
+            this.RSoundA.Size = new System.Drawing.Size(395, 596);
             this.RSoundA.TabIndex = 0;
             this.RSoundA.Text = "R Sound A";
+            // 
+            // flatLabel1
+            // 
+            this.flatLabel1.AutoSize = true;
+            this.flatLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.flatLabel1.ForeColor = System.Drawing.Color.White;
+            this.flatLabel1.Location = new System.Drawing.Point(199, 238);
+            this.flatLabel1.Name = "flatLabel1";
+            this.flatLabel1.Size = new System.Drawing.Size(154, 20);
+            this.flatLabel1.TabIndex = 21;
+            this.flatLabel1.Text = "Also export the sound";
+            // 
+            // checkExportSound
+            // 
+            this.checkExportSound.BackColor = System.Drawing.Color.Transparent;
+            this.checkExportSound.Checked = true;
+            this.checkExportSound.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkExportSound.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.checkExportSound.Location = new System.Drawing.Point(203, 261);
+            this.checkExportSound.Name = "checkExportSound";
+            this.checkExportSound.Options = FlatUI.FlatToggle._Options.Style2;
+            this.checkExportSound.Size = new System.Drawing.Size(76, 33);
+            this.checkExportSound.TabIndex = 20;
+            this.checkExportSound.Text = "flatToggle1";
             // 
             // flatGroupBox1
             // 
@@ -91,6 +121,7 @@
             this.statusLbl.Size = new System.Drawing.Size(324, 42);
             this.statusLbl.TabIndex = 19;
             this.statusLbl.Text = "You need to import a sound";
+            this.statusLbl.Visible = false;
             // 
             // importBtn
             // 
@@ -163,36 +194,68 @@
             this.flatClose1.Text = "flatClose1";
             this.flatClose1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             // 
-            // checkExportSound
+            // flatGroupBox2
             // 
-            this.checkExportSound.BackColor = System.Drawing.Color.Transparent;
-            this.checkExportSound.Checked = true;
-            this.checkExportSound.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkExportSound.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.checkExportSound.Location = new System.Drawing.Point(203, 261);
-            this.checkExportSound.Name = "checkExportSound";
-            this.checkExportSound.Options = FlatUI.FlatToggle._Options.Style2;
-            this.checkExportSound.Size = new System.Drawing.Size(76, 33);
-            this.checkExportSound.TabIndex = 20;
-            this.checkExportSound.Text = "flatToggle1";
+            this.flatGroupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.flatGroupBox2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.flatGroupBox2.Controls.Add(this.flatButton1);
+            this.flatGroupBox2.Controls.Add(this.flatLabel2);
+            this.flatGroupBox2.Controls.Add(this.flatNumeric1);
+            this.flatGroupBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.flatGroupBox2.Location = new System.Drawing.Point(12, 306);
+            this.flatGroupBox2.Name = "flatGroupBox2";
+            this.flatGroupBox2.ShowText = true;
+            this.flatGroupBox2.Size = new System.Drawing.Size(371, 278);
+            this.flatGroupBox2.TabIndex = 22;
+            this.flatGroupBox2.Text = "Testing RSA";
             // 
-            // flatLabel1
+            // flatNumeric1
             // 
-            this.flatLabel1.AutoSize = true;
-            this.flatLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.flatLabel1.ForeColor = System.Drawing.Color.White;
-            this.flatLabel1.Location = new System.Drawing.Point(199, 238);
-            this.flatLabel1.Name = "flatLabel1";
-            this.flatLabel1.Size = new System.Drawing.Size(154, 20);
-            this.flatLabel1.TabIndex = 21;
-            this.flatLabel1.Text = "Also export the sound";
+            this.flatNumeric1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.flatNumeric1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+            this.flatNumeric1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.flatNumeric1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.flatNumeric1.ForeColor = System.Drawing.Color.White;
+            this.flatNumeric1.Location = new System.Drawing.Point(160, 50);
+            this.flatNumeric1.Maximum = ((long)(9999999));
+            this.flatNumeric1.Minimum = ((long)(0));
+            this.flatNumeric1.Name = "flatNumeric1";
+            this.flatNumeric1.Size = new System.Drawing.Size(75, 30);
+            this.flatNumeric1.TabIndex = 0;
+            this.flatNumeric1.Text = "flatNumeric1";
+            this.flatNumeric1.Value = ((long)(0));
+            // 
+            // flatLabel2
+            // 
+            this.flatLabel2.AutoSize = true;
+            this.flatLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.flatLabel2.ForeColor = System.Drawing.Color.White;
+            this.flatLabel2.Location = new System.Drawing.Point(13, 57);
+            this.flatLabel2.Name = "flatLabel2";
+            this.flatLabel2.Size = new System.Drawing.Size(129, 20);
+            this.flatLabel2.TabIndex = 23;
+            this.flatLabel2.Text = "Number to crypt : ";
+            // 
+            // flatButton1
+            // 
+            this.flatButton1.BackColor = System.Drawing.Color.Transparent;
+            this.flatButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.flatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.flatButton1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.flatButton1.Location = new System.Drawing.Point(17, 224);
+            this.flatButton1.Name = "flatButton1";
+            this.flatButton1.Rounded = false;
+            this.flatButton1.Size = new System.Drawing.Size(223, 32);
+            this.flatButton1.TabIndex = 24;
+            this.flatButton1.Text = "Build encrypted message";
+            this.flatButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             // 
             // PrimaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 303);
+            this.ClientSize = new System.Drawing.Size(395, 596);
             this.Controls.Add(this.RSoundA);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -203,6 +266,8 @@
             this.RSoundA.ResumeLayout(false);
             this.RSoundA.PerformLayout();
             this.flatGroupBox1.ResumeLayout(false);
+            this.flatGroupBox2.ResumeLayout(false);
+            this.flatGroupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -219,6 +284,10 @@
         private FlatUI.FlatAlertBox statusLbl;
         private FlatUI.FlatLabel flatLabel1;
         private FlatUI.FlatToggle checkExportSound;
+        private FlatUI.FlatGroupBox flatGroupBox2;
+        private FlatUI.FlatButton flatButton1;
+        private FlatUI.FlatLabel flatLabel2;
+        private FlatUI.FlatNumeric flatNumeric1;
     }
 }
 
