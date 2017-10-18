@@ -29,22 +29,28 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrimaryForm));
             this.RSoundA = new FlatUI.FormSkin();
+            this.flatGroupBox2 = new FlatUI.FlatGroupBox();
+            this.lblPrivateKey = new FlatUI.FlatLabel();
+            this.lblPublicKeys = new FlatUI.FlatLabel();
+            this.flatLabel4 = new FlatUI.FlatLabel();
+            this.flatLabel3 = new FlatUI.FlatLabel();
+            this.flatButton1 = new FlatUI.FlatButton();
+            this.flatLabel2 = new FlatUI.FlatLabel();
+            this.flatNumeric1 = new FlatUI.FlatNumeric();
             this.flatLabel1 = new FlatUI.FlatLabel();
-            this.checkExportSound = new FlatUI.FlatToggle();
             this.flatGroupBox1 = new FlatUI.FlatGroupBox();
             this.statusLbl = new FlatUI.FlatAlertBox();
             this.importBtn = new FlatUI.FlatButton();
+            this.checkExportSound = new FlatUI.FlatToggle();
             this.btnCrypt = new FlatUI.FlatButton();
             this.txtBoxSoundPath = new FlatUI.FlatTextBox();
             this.flatMini1 = new FlatUI.FlatMini();
             this.flatClose1 = new FlatUI.FlatClose();
-            this.flatGroupBox2 = new FlatUI.FlatGroupBox();
-            this.flatNumeric1 = new FlatUI.FlatNumeric();
-            this.flatLabel2 = new FlatUI.FlatLabel();
-            this.flatButton1 = new FlatUI.FlatButton();
+            this.flatLabel5 = new FlatUI.FlatLabel();
+            this.lblEncryptedMsg = new FlatUI.FlatLabel();
             this.RSoundA.SuspendLayout();
-            this.flatGroupBox1.SuspendLayout();
             this.flatGroupBox2.SuspendLayout();
+            this.flatGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // RSoundA
@@ -54,7 +60,6 @@
             this.RSoundA.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(58)))), ((int)(((byte)(60)))));
             this.RSoundA.Controls.Add(this.flatGroupBox2);
             this.RSoundA.Controls.Add(this.flatLabel1);
-            this.RSoundA.Controls.Add(this.checkExportSound);
             this.RSoundA.Controls.Add(this.flatGroupBox1);
             this.RSoundA.Controls.Add(this.flatMini1);
             this.RSoundA.Controls.Add(this.flatClose1);
@@ -65,9 +70,121 @@
             this.RSoundA.HeaderMaximize = false;
             this.RSoundA.Location = new System.Drawing.Point(0, 0);
             this.RSoundA.Name = "RSoundA";
-            this.RSoundA.Size = new System.Drawing.Size(395, 596);
+            this.RSoundA.Size = new System.Drawing.Size(395, 539);
             this.RSoundA.TabIndex = 0;
             this.RSoundA.Text = "R Sound A";
+            // 
+            // flatGroupBox2
+            // 
+            this.flatGroupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.flatGroupBox2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.flatGroupBox2.Controls.Add(this.lblEncryptedMsg);
+            this.flatGroupBox2.Controls.Add(this.flatLabel5);
+            this.flatGroupBox2.Controls.Add(this.lblPrivateKey);
+            this.flatGroupBox2.Controls.Add(this.lblPublicKeys);
+            this.flatGroupBox2.Controls.Add(this.flatLabel4);
+            this.flatGroupBox2.Controls.Add(this.flatLabel3);
+            this.flatGroupBox2.Controls.Add(this.flatButton1);
+            this.flatGroupBox2.Controls.Add(this.flatLabel2);
+            this.flatGroupBox2.Controls.Add(this.flatNumeric1);
+            this.flatGroupBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.flatGroupBox2.Location = new System.Drawing.Point(12, 306);
+            this.flatGroupBox2.Name = "flatGroupBox2";
+            this.flatGroupBox2.ShowText = true;
+            this.flatGroupBox2.Size = new System.Drawing.Size(371, 230);
+            this.flatGroupBox2.TabIndex = 22;
+            this.flatGroupBox2.Text = "Testing RSA";
+            // 
+            // lblPrivateKey
+            // 
+            this.lblPrivateKey.AutoSize = true;
+            this.lblPrivateKey.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrivateKey.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lblPrivateKey.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.lblPrivateKey.Location = new System.Drawing.Point(129, 131);
+            this.lblPrivateKey.Name = "lblPrivateKey";
+            this.lblPrivateKey.Size = new System.Drawing.Size(36, 20);
+            this.lblPrivateKey.TabIndex = 28;
+            this.lblPrivateKey.Text = "N/A";
+            // 
+            // lblPublicKeys
+            // 
+            this.lblPublicKeys.AutoSize = true;
+            this.lblPublicKeys.BackColor = System.Drawing.Color.Transparent;
+            this.lblPublicKeys.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lblPublicKeys.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.lblPublicKeys.Location = new System.Drawing.Point(129, 101);
+            this.lblPublicKeys.Name = "lblPublicKeys";
+            this.lblPublicKeys.Size = new System.Drawing.Size(36, 20);
+            this.lblPublicKeys.TabIndex = 27;
+            this.lblPublicKeys.Text = "N/A";
+            // 
+            // flatLabel4
+            // 
+            this.flatLabel4.AutoSize = true;
+            this.flatLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel4.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.flatLabel4.ForeColor = System.Drawing.Color.White;
+            this.flatLabel4.Location = new System.Drawing.Point(13, 131);
+            this.flatLabel4.Name = "flatLabel4";
+            this.flatLabel4.Size = new System.Drawing.Size(87, 20);
+            this.flatLabel4.TabIndex = 26;
+            this.flatLabel4.Text = "Private key :";
+            // 
+            // flatLabel3
+            // 
+            this.flatLabel3.AutoSize = true;
+            this.flatLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel3.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.flatLabel3.ForeColor = System.Drawing.Color.White;
+            this.flatLabel3.Location = new System.Drawing.Point(13, 101);
+            this.flatLabel3.Name = "flatLabel3";
+            this.flatLabel3.Size = new System.Drawing.Size(94, 20);
+            this.flatLabel3.TabIndex = 25;
+            this.flatLabel3.Text = "Publics keys :";
+            // 
+            // flatButton1
+            // 
+            this.flatButton1.BackColor = System.Drawing.Color.Transparent;
+            this.flatButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.flatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.flatButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatButton1.Location = new System.Drawing.Point(17, 189);
+            this.flatButton1.Name = "flatButton1";
+            this.flatButton1.Rounded = false;
+            this.flatButton1.Size = new System.Drawing.Size(218, 32);
+            this.flatButton1.TabIndex = 24;
+            this.flatButton1.Text = "Build encrypted message";
+            this.flatButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.flatButton1.Click += new System.EventHandler(this.flatButton1_Click);
+            // 
+            // flatLabel2
+            // 
+            this.flatLabel2.AutoSize = true;
+            this.flatLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.flatLabel2.ForeColor = System.Drawing.Color.White;
+            this.flatLabel2.Location = new System.Drawing.Point(13, 57);
+            this.flatLabel2.Name = "flatLabel2";
+            this.flatLabel2.Size = new System.Drawing.Size(129, 20);
+            this.flatLabel2.TabIndex = 23;
+            this.flatLabel2.Text = "Number to crypt : ";
+            // 
+            // flatNumeric1
+            // 
+            this.flatNumeric1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.flatNumeric1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+            this.flatNumeric1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.flatNumeric1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.flatNumeric1.ForeColor = System.Drawing.Color.White;
+            this.flatNumeric1.Location = new System.Drawing.Point(160, 50);
+            this.flatNumeric1.Maximum = ((long)(9999999));
+            this.flatNumeric1.Minimum = ((long)(0));
+            this.flatNumeric1.Name = "flatNumeric1";
+            this.flatNumeric1.Size = new System.Drawing.Size(107, 30);
+            this.flatNumeric1.TabIndex = 0;
+            this.flatNumeric1.Text = "flatNumeric1";
+            this.flatNumeric1.Value = ((long)(0));
             // 
             // flatLabel1
             // 
@@ -81,25 +198,13 @@
             this.flatLabel1.TabIndex = 21;
             this.flatLabel1.Text = "Also export the sound";
             // 
-            // checkExportSound
-            // 
-            this.checkExportSound.BackColor = System.Drawing.Color.Transparent;
-            this.checkExportSound.Checked = true;
-            this.checkExportSound.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkExportSound.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.checkExportSound.Location = new System.Drawing.Point(203, 261);
-            this.checkExportSound.Name = "checkExportSound";
-            this.checkExportSound.Options = FlatUI.FlatToggle._Options.Style2;
-            this.checkExportSound.Size = new System.Drawing.Size(76, 33);
-            this.checkExportSound.TabIndex = 20;
-            this.checkExportSound.Text = "flatToggle1";
-            // 
             // flatGroupBox1
             // 
             this.flatGroupBox1.BackColor = System.Drawing.Color.Transparent;
             this.flatGroupBox1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
             this.flatGroupBox1.Controls.Add(this.statusLbl);
             this.flatGroupBox1.Controls.Add(this.importBtn);
+            this.flatGroupBox1.Controls.Add(this.checkExportSound);
             this.flatGroupBox1.Controls.Add(this.btnCrypt);
             this.flatGroupBox1.Controls.Add(this.txtBoxSoundPath);
             this.flatGroupBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -121,7 +226,6 @@
             this.statusLbl.Size = new System.Drawing.Size(324, 42);
             this.statusLbl.TabIndex = 19;
             this.statusLbl.Text = "You need to import a sound";
-            this.statusLbl.Visible = false;
             // 
             // importBtn
             // 
@@ -137,12 +241,25 @@
             this.importBtn.Text = "Browse .wav file";
             this.importBtn.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             // 
+            // checkExportSound
+            // 
+            this.checkExportSound.BackColor = System.Drawing.Color.Transparent;
+            this.checkExportSound.Checked = true;
+            this.checkExportSound.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkExportSound.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.checkExportSound.Location = new System.Drawing.Point(191, 212);
+            this.checkExportSound.Name = "checkExportSound";
+            this.checkExportSound.Options = FlatUI.FlatToggle._Options.Style2;
+            this.checkExportSound.Size = new System.Drawing.Size(76, 33);
+            this.checkExportSound.TabIndex = 20;
+            this.checkExportSound.Text = "flatToggle1";
+            // 
             // btnCrypt
             // 
             this.btnCrypt.BackColor = System.Drawing.Color.Transparent;
             this.btnCrypt.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.btnCrypt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCrypt.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnCrypt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrypt.Location = new System.Drawing.Point(187, 148);
             this.btnCrypt.Name = "btnCrypt";
             this.btnCrypt.Rounded = false;
@@ -150,7 +267,6 @@
             this.btnCrypt.TabIndex = 16;
             this.btnCrypt.Text = "Crypt the sound";
             this.btnCrypt.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnCrypt.Click += new System.EventHandler(this.btnCrypt_Click_1);
             // 
             // txtBoxSoundPath
             // 
@@ -194,68 +310,35 @@
             this.flatClose1.Text = "flatClose1";
             this.flatClose1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             // 
-            // flatGroupBox2
+            // flatLabel5
             // 
-            this.flatGroupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.flatGroupBox2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.flatGroupBox2.Controls.Add(this.flatButton1);
-            this.flatGroupBox2.Controls.Add(this.flatLabel2);
-            this.flatGroupBox2.Controls.Add(this.flatNumeric1);
-            this.flatGroupBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.flatGroupBox2.Location = new System.Drawing.Point(12, 306);
-            this.flatGroupBox2.Name = "flatGroupBox2";
-            this.flatGroupBox2.ShowText = true;
-            this.flatGroupBox2.Size = new System.Drawing.Size(371, 278);
-            this.flatGroupBox2.TabIndex = 22;
-            this.flatGroupBox2.Text = "Testing RSA";
+            this.flatLabel5.AutoSize = true;
+            this.flatLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.flatLabel5.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.flatLabel5.ForeColor = System.Drawing.Color.White;
+            this.flatLabel5.Location = new System.Drawing.Point(13, 159);
+            this.flatLabel5.Name = "flatLabel5";
+            this.flatLabel5.Size = new System.Drawing.Size(137, 20);
+            this.flatLabel5.TabIndex = 29;
+            this.flatLabel5.Text = "Encrypted message";
             // 
-            // flatNumeric1
+            // lblEncryptedMsg
             // 
-            this.flatNumeric1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.flatNumeric1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-            this.flatNumeric1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.flatNumeric1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.flatNumeric1.ForeColor = System.Drawing.Color.White;
-            this.flatNumeric1.Location = new System.Drawing.Point(160, 50);
-            this.flatNumeric1.Maximum = ((long)(9999999));
-            this.flatNumeric1.Minimum = ((long)(0));
-            this.flatNumeric1.Name = "flatNumeric1";
-            this.flatNumeric1.Size = new System.Drawing.Size(75, 30);
-            this.flatNumeric1.TabIndex = 0;
-            this.flatNumeric1.Text = "flatNumeric1";
-            this.flatNumeric1.Value = ((long)(0));
-            // 
-            // flatLabel2
-            // 
-            this.flatLabel2.AutoSize = true;
-            this.flatLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.flatLabel2.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.flatLabel2.ForeColor = System.Drawing.Color.White;
-            this.flatLabel2.Location = new System.Drawing.Point(13, 57);
-            this.flatLabel2.Name = "flatLabel2";
-            this.flatLabel2.Size = new System.Drawing.Size(129, 20);
-            this.flatLabel2.TabIndex = 23;
-            this.flatLabel2.Text = "Number to crypt : ";
-            // 
-            // flatButton1
-            // 
-            this.flatButton1.BackColor = System.Drawing.Color.Transparent;
-            this.flatButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.flatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flatButton1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.flatButton1.Location = new System.Drawing.Point(17, 224);
-            this.flatButton1.Name = "flatButton1";
-            this.flatButton1.Rounded = false;
-            this.flatButton1.Size = new System.Drawing.Size(223, 32);
-            this.flatButton1.TabIndex = 24;
-            this.flatButton1.Text = "Build encrypted message";
-            this.flatButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.lblEncryptedMsg.AutoSize = true;
+            this.lblEncryptedMsg.BackColor = System.Drawing.Color.Transparent;
+            this.lblEncryptedMsg.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lblEncryptedMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.lblEncryptedMsg.Location = new System.Drawing.Point(171, 159);
+            this.lblEncryptedMsg.Name = "lblEncryptedMsg";
+            this.lblEncryptedMsg.Size = new System.Drawing.Size(36, 20);
+            this.lblEncryptedMsg.TabIndex = 30;
+            this.lblEncryptedMsg.Text = "N/A";
             // 
             // PrimaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 596);
+            this.ClientSize = new System.Drawing.Size(395, 539);
             this.Controls.Add(this.RSoundA);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -265,9 +348,9 @@
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.RSoundA.ResumeLayout(false);
             this.RSoundA.PerformLayout();
-            this.flatGroupBox1.ResumeLayout(false);
             this.flatGroupBox2.ResumeLayout(false);
             this.flatGroupBox2.PerformLayout();
+            this.flatGroupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -288,6 +371,12 @@
         private FlatUI.FlatButton flatButton1;
         private FlatUI.FlatLabel flatLabel2;
         private FlatUI.FlatNumeric flatNumeric1;
+        private FlatUI.FlatLabel flatLabel3;
+        private FlatUI.FlatLabel flatLabel4;
+        private FlatUI.FlatLabel lblPrivateKey;
+        private FlatUI.FlatLabel lblPublicKeys;
+        private FlatUI.FlatLabel lblEncryptedMsg;
+        private FlatUI.FlatLabel flatLabel5;
     }
 }
 

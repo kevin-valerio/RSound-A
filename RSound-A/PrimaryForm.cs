@@ -138,10 +138,16 @@ namespace RSound_A
 
             }
         }
-
-        private void btnCrypt_Click_1(object sender, EventArgs e)
+ 
+        private void flatButton1_Click(object sender, EventArgs e)
         {
+            RSA myRSA = new RSA();
+ 
+            MessageBox.Show("a");
+            lblEncryptedMsg.Text = myRSA.Crypt((int) flatNumeric1.Value).ToString();
 
+            lblPrivateKey.Text = myRSA.getPrivateKey().ToString();
+            lblPrivateKey.Text = myRSA.getPublickey().ToString();
         }
     }
 }

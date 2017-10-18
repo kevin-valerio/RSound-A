@@ -9,4 +9,3 @@ C:\Users\Utilisateur\Desktop\RSound-A-master\RSound-A-master\RSound-A\obj\Debug\
 C:\Users\Utilisateur\Desktop\RSound-A-master\RSound-A-master\RSound-A\obj\Debug\RSound-A.csproj.CoreCompileInputs.cache
 C:\Users\Utilisateur\Desktop\RSound-A-master\RSound-A-master\RSound-A\obj\Debug\RSound-A.exe
 C:\Users\Utilisateur\Desktop\RSound-A-master\RSound-A-master\RSound-A\obj\Debug\RSound-A.pdb
-C:\Users\Utilisateur\Desktop\RSound-A-master\RSound-A-master\RSound-A\bin\Debug\FlatUI.dll

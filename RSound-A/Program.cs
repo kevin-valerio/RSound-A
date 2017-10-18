@@ -31,7 +31,7 @@ namespace Encryption
         public List<int> getPublickey() { return publickey; }
         public RSA()
         {
-           // GenerateKey();
+            GenerateKey();
         }
 
         public int Crypt(int toCrypt)
@@ -53,7 +53,7 @@ namespace Encryption
             publickey = PublicRSAKey.GetPublicKey();
 
             RSAKey PrivateKey = new RSAKey();
-            privateKey = PublicRSAKey.GetPrivateKey();
+            privateKey = PrivateKey.GetPrivateKey();
 
         }
 
@@ -140,21 +140,11 @@ public class RSAKey
 
     public int GetPrivateKey()
     {
-        return GetDecryptionExponent();
-    }
-
-
-
-    private static int GetDecryptionExponent()
-    {
         //calculer l'entier naturel d, inverse de e modulo φ(n), et strictement inférieur à φ(n), 
         //appelé exposant de déchiffrement ; d peut se calculer efficacement par l'algorithme d'Euclide étendu.
         //return d * e congrue 1 mod phi(n)
-
         return modInverse(E, Phi);
-
     }
-
 
     public static int modInverse(int X, int Y)
     {
@@ -243,18 +233,11 @@ public class RSAKey
                 A = tmpB;
                 U = tmpV - (MatriceOperation[cpt - 1][1]) * U;
             }
-            if (U < 0)
-            {
+            if (U < 0) {
 
                 for (int k = 0; U < 0; ++k)
                     U = U + k * B;
             }
-
             return U;
-
-       
-
-       
-
     }
 }
