@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Numerics;
 using System.Windows.Forms;
 
 namespace RSound_A
@@ -52,17 +53,17 @@ namespace Encryption
         public void GenerateKey()
         {
  
-            RSAKey PublicRSAKey = new RSAKey();
-            publickey = PublicRSAKey.GetPublicKey();
+            RSAKey RSAKey = new RSAKey();
+            publickey = RSAKey.GetPublicKey();
 
-            RSAKey PrivateKey = new RSAKey();
-            privateKey = PrivateKey.GetPrivateKey();
+            privateKey = RSAKey.GetPrivateKey();
 
         }
 
         public static int PowerModulo(int M, int e, int mod)
         {
             //Calcul de c = M^e [mod]
+            //Fonctionne
             int c = M;
             for (int a = 1; a < e; ++a) 
                 c = (M * c) % mod;
@@ -84,7 +85,7 @@ public class RSAKey
    }; */
     private static List<int> PrimaryNumbers = new List<int>
     {
-        2,3,5,7,11,13,17,19,23,29,31,37,41,43
+       17,19,23,29,31,37,41,43
     };
 
     private static int Q;
@@ -108,6 +109,8 @@ public class RSAKey
 
     private static int GetRandomPrimaryNumber()
     {
+        //Fonctionne
+
         return PrimaryNumbers[new Random().Next(0, PrimaryNumbers.Count)];
     }
 
@@ -115,20 +118,22 @@ public class RSAKey
 
     private static int PGCD(int a, int b)
     {
-         int modulo = a % b;
+        //Fonctionne
+
+        int modulo = a % b;
         if (modulo == 0) return b;
         return PGCD(b, modulo);
-        
-       // return (a%b==0) ? b : (PGCD(b, a%b));
+
+
     }
 
     private static int GetEncryptionExponent()
     {
-
+        //FOnctionne
         Random rnd = new Random();
         while (true) {
             int e = rnd.Next(0, Phi);
-            if ((PGCD(e, ((P - 1) * (Q - 1))) == 1) && (e < Phi)) {
+            if ((PGCD(e, Phi) == 1) ) {
                 return e;
 
             }
@@ -145,16 +150,11 @@ public class RSAKey
 
     public int GetPrivateKey()
     {
-        //calculer l'entier naturel d, inverse de e modulo φ(n), et strictement inférieur à φ(n), 
-        //appelé exposant de déchiffrement ; d peut se calculer efficacement par l'algorithme d'Euclide étendu.
-        //return d * e congrue 1 mod phi(n)
         return modInverse(E, Phi);
     }
 
     public static int modInverse(int X, int Y)
-    {
-
-
+    { 
         /* RAPPORT :
         *
         * Quel est le projet
@@ -169,8 +169,8 @@ public class RSAKey
         * ___________________
         * 10min presentation, 5min questions
         */
-       
-            List<List<int>> MatriceOperation =  new List<List<int>>();
+
+        List<List<int>> MatriceOperation =  new List<List<int>>();
 
             int a, b, q, r;
 

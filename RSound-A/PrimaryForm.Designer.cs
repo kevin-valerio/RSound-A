@@ -98,9 +98,8 @@
             this.RSoundA.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
             this.RSoundA.HeaderMaximize = false;
             this.RSoundA.Location = new System.Drawing.Point(0, 0);
-            this.RSoundA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RSoundA.Name = "RSoundA";
-            this.RSoundA.Size = new System.Drawing.Size(734, 829);
+            this.RSoundA.Size = new System.Drawing.Size(529, 512);
             this.RSoundA.TabIndex = 0;
             this.RSoundA.Text = "R Sound A";
             // 
@@ -109,25 +108,23 @@
             this.lblD.AutoSize = true;
             this.lblD.BackColor = System.Drawing.Color.Transparent;
             this.lblD.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lblD.ForeColor = System.Drawing.Color.White;
-            this.lblD.Location = new System.Drawing.Point(558, 606);
-            this.lblD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.lblD.Location = new System.Drawing.Point(431, 420);
             this.lblD.Name = "lblD";
-            this.lblD.Size = new System.Drawing.Size(52, 30);
-            this.lblD.TabIndex = 36;
+            this.lblD.Size = new System.Drawing.Size(36, 20);
+            this.lblD.TabIndex = 31;
             this.lblD.Text = "N/A";
             // 
             // txtD
             // 
             this.txtD.BackColor = System.Drawing.Color.Transparent;
             this.txtD.FocusOnHover = false;
-            this.txtD.Location = new System.Drawing.Point(550, 559);
-            this.txtD.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtD.Location = new System.Drawing.Point(396, 383);
             this.txtD.MaxLength = 32767;
             this.txtD.Multiline = false;
             this.txtD.Name = "txtD";
             this.txtD.ReadOnly = false;
-            this.txtD.Size = new System.Drawing.Size(145, 38);
+            this.txtD.Size = new System.Drawing.Size(85, 29);
             this.txtD.TabIndex = 35;
             this.txtD.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtD.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -139,24 +136,22 @@
             this.flatLabel16.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel16.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.flatLabel16.ForeColor = System.Drawing.Color.White;
-            this.flatLabel16.Location = new System.Drawing.Point(391, 606);
-            this.flatLabel16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.flatLabel16.Location = new System.Drawing.Point(278, 420);
             this.flatLabel16.Name = "flatLabel16";
-            this.flatLabel16.Size = new System.Drawing.Size(163, 30);
+            this.flatLabel16.Size = new System.Drawing.Size(140, 20);
             this.flatLabel16.TabIndex = 34;
-            this.flatLabel16.Text = "Private key (d) :";
+            this.flatLabel16.Text = "Decrypted message";
             // 
             // txtN
             // 
             this.txtN.BackColor = System.Drawing.Color.Transparent;
             this.txtN.FocusOnHover = false;
-            this.txtN.Location = new System.Drawing.Point(550, 513);
-            this.txtN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtN.Location = new System.Drawing.Point(384, 347);
             this.txtN.MaxLength = 32767;
             this.txtN.Multiline = false;
             this.txtN.Name = "txtN";
             this.txtN.ReadOnly = false;
-            this.txtN.Size = new System.Drawing.Size(145, 38);
+            this.txtN.Size = new System.Drawing.Size(97, 29);
             this.txtN.TabIndex = 22;
             this.txtN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtN.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -168,10 +163,9 @@
             this.flatLabel15.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel15.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.flatLabel15.ForeColor = System.Drawing.Color.White;
-            this.flatLabel15.Location = new System.Drawing.Point(389, 559);
-            this.flatLabel15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.flatLabel15.Location = new System.Drawing.Point(276, 388);
             this.flatLabel15.Name = "flatLabel15";
-            this.flatLabel15.Size = new System.Drawing.Size(169, 30);
+            this.flatLabel15.Size = new System.Drawing.Size(114, 20);
             this.flatLabel15.TabIndex = 33;
             this.flatLabel15.Text = "Private key (d)  :";
             // 
@@ -181,10 +175,9 @@
             this.flatLabel14.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel14.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.flatLabel14.ForeColor = System.Drawing.Color.White;
-            this.flatLabel14.Location = new System.Drawing.Point(389, 516);
-            this.flatLabel14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.flatLabel14.Location = new System.Drawing.Point(276, 349);
             this.flatLabel14.Name = "flatLabel14";
-            this.flatLabel14.Size = new System.Drawing.Size(153, 30);
+            this.flatLabel14.Size = new System.Drawing.Size(104, 20);
             this.flatLabel14.TabIndex = 32;
             this.flatLabel14.Text = "Public key (n) :";
             // 
@@ -195,12 +188,11 @@
             this.nbrToDecrypt.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.nbrToDecrypt.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.nbrToDecrypt.ForeColor = System.Drawing.Color.White;
-            this.nbrToDecrypt.Location = new System.Drawing.Point(604, 454);
-            this.nbrToDecrypt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nbrToDecrypt.Location = new System.Drawing.Point(419, 309);
             this.nbrToDecrypt.Maximum = ((long)(9999999));
             this.nbrToDecrypt.Minimum = ((long)(0));
             this.nbrToDecrypt.Name = "nbrToDecrypt";
-            this.nbrToDecrypt.Size = new System.Drawing.Size(96, 30);
+            this.nbrToDecrypt.Size = new System.Drawing.Size(64, 30);
             this.nbrToDecrypt.TabIndex = 31;
             this.nbrToDecrypt.Value = ((long)(0));
             // 
@@ -210,10 +202,9 @@
             this.flatLabel13.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel13.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.flatLabel13.ForeColor = System.Drawing.Color.White;
-            this.flatLabel13.Location = new System.Drawing.Point(389, 453);
-            this.flatLabel13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.flatLabel13.Location = new System.Drawing.Point(276, 310);
             this.flatLabel13.Name = "flatLabel13";
-            this.flatLabel13.Size = new System.Drawing.Size(216, 30);
+            this.flatLabel13.Size = new System.Drawing.Size(146, 20);
             this.flatLabel13.TabIndex = 31;
             this.flatLabel13.Text = "Number to decrypt : ";
             // 
@@ -223,11 +214,10 @@
             this.flatButton3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.flatButton3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.flatButton3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatButton3.Location = new System.Drawing.Point(392, 659);
-            this.flatButton3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flatButton3.Location = new System.Drawing.Point(278, 459);
             this.flatButton3.Name = "flatButton3";
             this.flatButton3.Rounded = false;
-            this.flatButton3.Size = new System.Drawing.Size(327, 49);
+            this.flatButton3.Size = new System.Drawing.Size(218, 32);
             this.flatButton3.TabIndex = 31;
             this.flatButton3.Text = "Build decrypted message";
             this.flatButton3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
@@ -248,11 +238,10 @@
             this.flatGroupBox2.Controls.Add(this.flatLabel2);
             this.flatGroupBox2.Controls.Add(this.flatNumeric1);
             this.flatGroupBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.flatGroupBox2.Location = new System.Drawing.Point(18, 421);
-            this.flatGroupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flatGroupBox2.Location = new System.Drawing.Point(12, 288);
             this.flatGroupBox2.Name = "flatGroupBox2";
             this.flatGroupBox2.ShowText = true;
-            this.flatGroupBox2.Size = new System.Drawing.Size(415, 354);
+            this.flatGroupBox2.Size = new System.Drawing.Size(277, 230);
             this.flatGroupBox2.TabIndex = 22;
             this.flatGroupBox2.Text = "Testing RSA";
             // 
@@ -270,11 +259,10 @@
             this.flatGroupBox3.Controls.Add(this.flatLabel12);
             this.flatGroupBox3.Controls.Add(this.flatNumeric2);
             this.flatGroupBox3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.flatGroupBox3.Location = new System.Drawing.Point(-14, -21);
-            this.flatGroupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flatGroupBox3.Location = new System.Drawing.Point(-9, -14);
             this.flatGroupBox3.Name = "flatGroupBox3";
             this.flatGroupBox3.ShowText = true;
-            this.flatGroupBox3.Size = new System.Drawing.Size(671, 354);
+            this.flatGroupBox3.Size = new System.Drawing.Size(523, 230);
             this.flatGroupBox3.TabIndex = 31;
             this.flatGroupBox3.Text = "Testing RSA";
             // 
@@ -284,10 +272,9 @@
             this.flatLabel6.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel6.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.flatLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.flatLabel6.Location = new System.Drawing.Point(235, 206);
-            this.flatLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.flatLabel6.Location = new System.Drawing.Point(156, 146);
             this.flatLabel6.Name = "flatLabel6";
-            this.flatLabel6.Size = new System.Drawing.Size(52, 30);
+            this.flatLabel6.Size = new System.Drawing.Size(36, 20);
             this.flatLabel6.TabIndex = 30;
             this.flatLabel6.Text = "N/A";
             // 
@@ -297,10 +284,9 @@
             this.flatLabel7.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel7.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.flatLabel7.ForeColor = System.Drawing.Color.White;
-            this.flatLabel7.Location = new System.Drawing.Point(20, 206);
-            this.flatLabel7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.flatLabel7.Location = new System.Drawing.Point(13, 146);
             this.flatLabel7.Name = "flatLabel7";
-            this.flatLabel7.Size = new System.Drawing.Size(201, 30);
+            this.flatLabel7.Size = new System.Drawing.Size(137, 20);
             this.flatLabel7.TabIndex = 29;
             this.flatLabel7.Text = "Encrypted message";
             // 
@@ -310,10 +296,9 @@
             this.flatLabel8.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel8.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.flatLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.flatLabel8.Location = new System.Drawing.Point(194, 161);
-            this.flatLabel8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.flatLabel8.Location = new System.Drawing.Point(123, 109);
             this.flatLabel8.Name = "flatLabel8";
-            this.flatLabel8.Size = new System.Drawing.Size(52, 30);
+            this.flatLabel8.Size = new System.Drawing.Size(36, 20);
             this.flatLabel8.TabIndex = 28;
             this.flatLabel8.Text = "N/A";
             // 
@@ -323,10 +308,9 @@
             this.flatLabel9.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel9.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.flatLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.flatLabel9.Location = new System.Drawing.Point(181, 101);
-            this.flatLabel9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.flatLabel9.Location = new System.Drawing.Point(160, 72);
             this.flatLabel9.Name = "flatLabel9";
-            this.flatLabel9.Size = new System.Drawing.Size(52, 30);
+            this.flatLabel9.Size = new System.Drawing.Size(36, 20);
             this.flatLabel9.TabIndex = 27;
             this.flatLabel9.Text = "N/A";
             // 
@@ -336,12 +320,11 @@
             this.flatLabel10.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel10.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.flatLabel10.ForeColor = System.Drawing.Color.White;
-            this.flatLabel10.Location = new System.Drawing.Point(20, 161);
-            this.flatLabel10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.flatLabel10.Location = new System.Drawing.Point(13, 109);
             this.flatLabel10.Name = "flatLabel10";
-            this.flatLabel10.Size = new System.Drawing.Size(130, 30);
+            this.flatLabel10.Size = new System.Drawing.Size(106, 20);
             this.flatLabel10.TabIndex = 26;
-            this.flatLabel10.Text = "Private key :";
+            this.flatLabel10.Text = "Private key (d):";
             // 
             // flatLabel11
             // 
@@ -349,12 +332,11 @@
             this.flatLabel11.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel11.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.flatLabel11.ForeColor = System.Drawing.Color.White;
-            this.flatLabel11.Location = new System.Drawing.Point(20, 100);
-            this.flatLabel11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.flatLabel11.Location = new System.Drawing.Point(13, 72);
             this.flatLabel11.Name = "flatLabel11";
-            this.flatLabel11.Size = new System.Drawing.Size(244, 60);
+            this.flatLabel11.Size = new System.Drawing.Size(141, 20);
             this.flatLabel11.TabIndex = 25;
-            this.flatLabel11.Text = "Publics keys :\r\n(generated automaticly)\r\n";
+            this.flatLabel11.Text = "Publics keys (N + E):";
             // 
             // flatButton2
             // 
@@ -362,11 +344,10 @@
             this.flatButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.flatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.flatButton2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatButton2.Location = new System.Drawing.Point(23, 259);
-            this.flatButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flatButton2.Location = new System.Drawing.Point(17, 185);
             this.flatButton2.Name = "flatButton2";
             this.flatButton2.Rounded = false;
-            this.flatButton2.Size = new System.Drawing.Size(327, 49);
+            this.flatButton2.Size = new System.Drawing.Size(218, 32);
             this.flatButton2.TabIndex = 24;
             this.flatButton2.Text = "Build encrypted message";
             this.flatButton2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
@@ -378,10 +359,9 @@
             this.flatLabel12.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel12.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.flatLabel12.ForeColor = System.Drawing.Color.White;
-            this.flatLabel12.Location = new System.Drawing.Point(20, 58);
-            this.flatLabel12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.flatLabel12.Location = new System.Drawing.Point(13, 38);
             this.flatLabel12.Name = "flatLabel12";
-            this.flatLabel12.Size = new System.Drawing.Size(191, 30);
+            this.flatLabel12.Size = new System.Drawing.Size(129, 20);
             this.flatLabel12.TabIndex = 23;
             this.flatLabel12.Text = "Number to crypt : ";
             // 
@@ -392,12 +372,11 @@
             this.flatNumeric2.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.flatNumeric2.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.flatNumeric2.ForeColor = System.Drawing.Color.White;
-            this.flatNumeric2.Location = new System.Drawing.Point(233, 56);
-            this.flatNumeric2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flatNumeric2.Location = new System.Drawing.Point(145, 32);
             this.flatNumeric2.Maximum = ((long)(9999999));
             this.flatNumeric2.Minimum = ((long)(0));
             this.flatNumeric2.Name = "flatNumeric2";
-            this.flatNumeric2.Size = new System.Drawing.Size(131, 30);
+            this.flatNumeric2.Size = new System.Drawing.Size(87, 30);
             this.flatNumeric2.TabIndex = 0;
             this.flatNumeric2.Text = "flatNumeric2";
             this.flatNumeric2.Value = ((long)(0));
@@ -408,10 +387,9 @@
             this.lblEncryptedMsg.BackColor = System.Drawing.Color.Transparent;
             this.lblEncryptedMsg.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lblEncryptedMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblEncryptedMsg.Location = new System.Drawing.Point(235, 206);
-            this.lblEncryptedMsg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEncryptedMsg.Location = new System.Drawing.Point(157, 134);
             this.lblEncryptedMsg.Name = "lblEncryptedMsg";
-            this.lblEncryptedMsg.Size = new System.Drawing.Size(52, 30);
+            this.lblEncryptedMsg.Size = new System.Drawing.Size(36, 20);
             this.lblEncryptedMsg.TabIndex = 30;
             this.lblEncryptedMsg.Text = "N/A";
             // 
@@ -421,10 +399,9 @@
             this.flatLabel5.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel5.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.flatLabel5.ForeColor = System.Drawing.Color.White;
-            this.flatLabel5.Location = new System.Drawing.Point(20, 206);
-            this.flatLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.flatLabel5.Location = new System.Drawing.Point(13, 134);
             this.flatLabel5.Name = "flatLabel5";
-            this.flatLabel5.Size = new System.Drawing.Size(201, 30);
+            this.flatLabel5.Size = new System.Drawing.Size(137, 20);
             this.flatLabel5.TabIndex = 29;
             this.flatLabel5.Text = "Encrypted message";
             // 
@@ -434,10 +411,9 @@
             this.lblPrivateKey.BackColor = System.Drawing.Color.Transparent;
             this.lblPrivateKey.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lblPrivateKey.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblPrivateKey.Location = new System.Drawing.Point(194, 161);
-            this.lblPrivateKey.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrivateKey.Location = new System.Drawing.Point(129, 105);
             this.lblPrivateKey.Name = "lblPrivateKey";
-            this.lblPrivateKey.Size = new System.Drawing.Size(52, 30);
+            this.lblPrivateKey.Size = new System.Drawing.Size(36, 20);
             this.lblPrivateKey.TabIndex = 28;
             this.lblPrivateKey.Text = "N/A";
             // 
@@ -447,10 +423,9 @@
             this.lblPublicKeys.BackColor = System.Drawing.Color.Transparent;
             this.lblPublicKeys.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lblPublicKeys.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblPublicKeys.Location = new System.Drawing.Point(194, 116);
-            this.lblPublicKeys.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPublicKeys.Location = new System.Drawing.Point(129, 75);
             this.lblPublicKeys.Name = "lblPublicKeys";
-            this.lblPublicKeys.Size = new System.Drawing.Size(52, 30);
+            this.lblPublicKeys.Size = new System.Drawing.Size(36, 20);
             this.lblPublicKeys.TabIndex = 27;
             this.lblPublicKeys.Text = "N/A";
             // 
@@ -460,10 +435,9 @@
             this.flatLabel4.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel4.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.flatLabel4.ForeColor = System.Drawing.Color.White;
-            this.flatLabel4.Location = new System.Drawing.Point(20, 161);
-            this.flatLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.flatLabel4.Location = new System.Drawing.Point(13, 105);
             this.flatLabel4.Name = "flatLabel4";
-            this.flatLabel4.Size = new System.Drawing.Size(130, 30);
+            this.flatLabel4.Size = new System.Drawing.Size(87, 20);
             this.flatLabel4.TabIndex = 26;
             this.flatLabel4.Text = "Private key :";
             // 
@@ -473,10 +447,9 @@
             this.flatLabel3.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel3.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.flatLabel3.ForeColor = System.Drawing.Color.White;
-            this.flatLabel3.Location = new System.Drawing.Point(20, 116);
-            this.flatLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.flatLabel3.Location = new System.Drawing.Point(13, 75);
             this.flatLabel3.Name = "flatLabel3";
-            this.flatLabel3.Size = new System.Drawing.Size(139, 30);
+            this.flatLabel3.Size = new System.Drawing.Size(94, 20);
             this.flatLabel3.TabIndex = 25;
             this.flatLabel3.Text = "Publics keys :";
             // 
@@ -486,11 +459,10 @@
             this.flatButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.flatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.flatButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flatButton1.Location = new System.Drawing.Point(23, 259);
-            this.flatButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flatButton1.Location = new System.Drawing.Point(15, 168);
             this.flatButton1.Name = "flatButton1";
             this.flatButton1.Rounded = false;
-            this.flatButton1.Size = new System.Drawing.Size(327, 49);
+            this.flatButton1.Size = new System.Drawing.Size(218, 32);
             this.flatButton1.TabIndex = 24;
             this.flatButton1.Text = "Build encrypted message";
             this.flatButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
@@ -502,10 +474,9 @@
             this.flatLabel2.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel2.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.flatLabel2.ForeColor = System.Drawing.Color.White;
-            this.flatLabel2.Location = new System.Drawing.Point(20, 58);
-            this.flatLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.flatLabel2.Location = new System.Drawing.Point(13, 38);
             this.flatLabel2.Name = "flatLabel2";
-            this.flatLabel2.Size = new System.Drawing.Size(191, 30);
+            this.flatLabel2.Size = new System.Drawing.Size(129, 20);
             this.flatLabel2.TabIndex = 23;
             this.flatLabel2.Text = "Number to crypt : ";
             // 
@@ -516,12 +487,11 @@
             this.flatNumeric1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.flatNumeric1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.flatNumeric1.ForeColor = System.Drawing.Color.White;
-            this.flatNumeric1.Location = new System.Drawing.Point(240, 56);
-            this.flatNumeric1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flatNumeric1.Location = new System.Drawing.Point(160, 36);
             this.flatNumeric1.Maximum = ((long)(9999999));
             this.flatNumeric1.Minimum = ((long)(0));
             this.flatNumeric1.Name = "flatNumeric1";
-            this.flatNumeric1.Size = new System.Drawing.Size(160, 30);
+            this.flatNumeric1.Size = new System.Drawing.Size(107, 30);
             this.flatNumeric1.TabIndex = 0;
             this.flatNumeric1.Text = "flatNumeric1";
             this.flatNumeric1.Value = ((long)(0));
@@ -537,11 +507,10 @@
             this.flatGroupBox1.Controls.Add(this.btnCrypt);
             this.flatGroupBox1.Controls.Add(this.txtBoxSoundPath);
             this.flatGroupBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.flatGroupBox1.Location = new System.Drawing.Point(6, 42);
-            this.flatGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flatGroupBox1.Location = new System.Drawing.Point(84, 49);
             this.flatGroupBox1.Name = "flatGroupBox1";
             this.flatGroupBox1.ShowText = true;
-            this.flatGroupBox1.Size = new System.Drawing.Size(549, 377);
+            this.flatGroupBox1.Size = new System.Drawing.Size(366, 245);
             this.flatGroupBox1.TabIndex = 17;
             this.flatGroupBox1.Text = "Import your sound";
             // 
@@ -551,10 +520,9 @@
             this.statusLbl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.statusLbl.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.statusLbl.kind = FlatUI.FlatAlertBox._Kind.Info;
-            this.statusLbl.Location = new System.Drawing.Point(26, 115);
-            this.statusLbl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.statusLbl.Location = new System.Drawing.Point(17, 75);
             this.statusLbl.Name = "statusLbl";
-            this.statusLbl.Size = new System.Drawing.Size(486, 42);
+            this.statusLbl.Size = new System.Drawing.Size(324, 42);
             this.statusLbl.TabIndex = 19;
             this.statusLbl.Text = "You need to import a sound";
             this.statusLbl.Visible = false;
@@ -565,10 +533,9 @@
             this.flatLabel1.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel1.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.flatLabel1.ForeColor = System.Drawing.Color.White;
-            this.flatLabel1.Location = new System.Drawing.Point(281, 257);
-            this.flatLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.flatLabel1.Location = new System.Drawing.Point(187, 167);
             this.flatLabel1.Name = "flatLabel1";
-            this.flatLabel1.Size = new System.Drawing.Size(225, 30);
+            this.flatLabel1.Size = new System.Drawing.Size(154, 20);
             this.flatLabel1.TabIndex = 21;
             this.flatLabel1.Text = "Also export the sound";
             // 
@@ -578,11 +545,10 @@
             this.importBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.importBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.importBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.importBtn.Location = new System.Drawing.Point(25, 203);
-            this.importBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.importBtn.Location = new System.Drawing.Point(17, 132);
             this.importBtn.Name = "importBtn";
             this.importBtn.Rounded = false;
-            this.importBtn.Size = new System.Drawing.Size(231, 49);
+            this.importBtn.Size = new System.Drawing.Size(154, 32);
             this.importBtn.TabIndex = 15;
             this.importBtn.Text = "Browse .wav file";
             this.importBtn.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
@@ -594,8 +560,7 @@
             this.checkExportSound.Checked = true;
             this.checkExportSound.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkExportSound.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.checkExportSound.Location = new System.Drawing.Point(286, 302);
-            this.checkExportSound.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.checkExportSound.Location = new System.Drawing.Point(191, 196);
             this.checkExportSound.Name = "checkExportSound";
             this.checkExportSound.Options = FlatUI.FlatToggle._Options.Style2;
             this.checkExportSound.Size = new System.Drawing.Size(76, 33);
@@ -608,11 +573,10 @@
             this.btnCrypt.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.btnCrypt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCrypt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrypt.Location = new System.Drawing.Point(281, 203);
-            this.btnCrypt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCrypt.Location = new System.Drawing.Point(187, 132);
             this.btnCrypt.Name = "btnCrypt";
             this.btnCrypt.Rounded = false;
-            this.btnCrypt.Size = new System.Drawing.Size(231, 49);
+            this.btnCrypt.Size = new System.Drawing.Size(154, 32);
             this.btnCrypt.TabIndex = 16;
             this.btnCrypt.Text = "Crypt the sound";
             this.btnCrypt.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
@@ -622,13 +586,12 @@
             // 
             this.txtBoxSoundPath.BackColor = System.Drawing.Color.Transparent;
             this.txtBoxSoundPath.FocusOnHover = false;
-            this.txtBoxSoundPath.Location = new System.Drawing.Point(26, 63);
-            this.txtBoxSoundPath.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBoxSoundPath.Location = new System.Drawing.Point(17, 41);
             this.txtBoxSoundPath.MaxLength = 32767;
             this.txtBoxSoundPath.Multiline = false;
             this.txtBoxSoundPath.Name = "txtBoxSoundPath";
             this.txtBoxSoundPath.ReadOnly = false;
-            this.txtBoxSoundPath.Size = new System.Drawing.Size(486, 38);
+            this.txtBoxSoundPath.Size = new System.Drawing.Size(324, 29);
             this.txtBoxSoundPath.TabIndex = 14;
             this.txtBoxSoundPath.Text = "C:\\";
             this.txtBoxSoundPath.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -641,8 +604,7 @@
             this.flatMini1.BackColor = System.Drawing.Color.White;
             this.flatMini1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
             this.flatMini1.Font = new System.Drawing.Font("Marlett", 12F);
-            this.flatMini1.Location = new System.Drawing.Point(667, 18);
-            this.flatMini1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flatMini1.Location = new System.Drawing.Point(485, 12);
             this.flatMini1.Name = "flatMini1";
             this.flatMini1.Size = new System.Drawing.Size(18, 18);
             this.flatMini1.TabIndex = 11;
@@ -655,8 +617,7 @@
             this.flatClose1.BackColor = System.Drawing.Color.White;
             this.flatClose1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.flatClose1.Font = new System.Drawing.Font("Marlett", 10F);
-            this.flatClose1.Location = new System.Drawing.Point(703, 18);
-            this.flatClose1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flatClose1.Location = new System.Drawing.Point(509, 12);
             this.flatClose1.Name = "flatClose1";
             this.flatClose1.Size = new System.Drawing.Size(18, 18);
             this.flatClose1.TabIndex = 10;
@@ -665,13 +626,12 @@
             // 
             // PrimaryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 829);
+            this.ClientSize = new System.Drawing.Size(529, 512);
             this.Controls.Add(this.RSoundA);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PrimaryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RSound-A";
@@ -723,12 +683,12 @@
         private FlatUI.FlatNumeric flatNumeric2;
         private FlatUI.FlatNumeric nbrToDecrypt;
         private FlatUI.FlatLabel flatLabel13;
-        private FlatUI.FlatLabel lblD;
         private FlatUI.FlatTextBox txtD;
         private FlatUI.FlatLabel flatLabel16;
-        private FlatUI.FlatTextBox txtN;
         private FlatUI.FlatLabel flatLabel15;
         private FlatUI.FlatLabel flatLabel14;
+        private FlatUI.FlatTextBox txtN;
+        private FlatUI.FlatLabel lblD;
     }
 }
 
