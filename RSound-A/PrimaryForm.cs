@@ -19,6 +19,7 @@ namespace RSound_A
         private int Channel;
         public PrimaryForm() {
             InitializeComponent();
+            statusLbl.Visible = true;
         }     
  
         private void CreateHauteurListAndCrypt(String path) {
@@ -49,20 +50,22 @@ namespace RSound_A
         }
   
 
-        private void importBtn_click(object sender, EventArgs e)
+        private void importBtn_Click_1(object sender, EventArgs e)
         {
 
-          
-            OpenFileDialog openSound = new OpenFileDialog() {
+
+            OpenFileDialog openSound = new OpenFileDialog()
+            {
                 Filter = "WAV Files|*.wav",
                 Title = "Please, select a .wav file"
             };
 
-            if (openSound.ShowDialog() == DialogResult.OK) {
+            if (openSound.ShowDialog() == DialogResult.OK)
+            {
                 SoundPath = openSound.FileName;
                 txtBoxSoundPath.Text = SoundPath;
                 ChangeStatus("Sound opened with success!", FlatUI.FlatAlertBox._Kind.Success);
-              
+
             }
 
         }
@@ -101,7 +104,7 @@ namespace RSound_A
         }
 
    
-        private void btnCrypt_click(object sender, EventArgs e) {
+        private void btnCrypt_Click_1(object sender, EventArgs e) {
             try {
                 CreateHauteurListAndCrypt(SoundPath);
 
@@ -141,13 +144,45 @@ namespace RSound_A
  
         private void flatButton1_Click(object sender, EventArgs e)
         {
-            RSA myRSA = new RSA();
- 
-            MessageBox.Show("a");
-            lblEncryptedMsg.Text = myRSA.Crypt((int) flatNumeric1.Value).ToString();
+             RSA myRSA = new RSA();
 
-            lblPrivateKey.Text = myRSA.getPrivateKey().ToString();
-            lblPrivateKey.Text = myRSA.getPublickey().ToString();
+             flatLabel8.Text = myRSA.getPrivateKey().ToString();
+             flatLabel9.Text = myRSA.getPublickey()[0] + " & " + myRSA.getPublickey()[1] ;
+             flatLabel6.Text = myRSA.Crypt(Convert.ToInt32(flatNumeric2.Value)).ToString();
+
         }
+
+        private void flatButton2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openSound = new OpenFileDialog()
+            {
+                Filter = "WAV Files|*.wav",
+                Title = "Please, select a .wav file"
+            };
+
+            if (openSound.ShowDialog() == DialogResult.OK)
+            {
+                SoundPath = openSound.FileName;
+                txtBoxSoundPath.Text = SoundPath;
+                ChangeStatus("Sound opened with success!", FlatUI.FlatAlertBox._Kind.Success);
+
+            }
+        }
+
+        private void flatButton3_Click(object sender, EventArgs e)
+        {
+            RSA myRSA = new RSA();
+           MessageBox.Show(myRSA.Decrypt(
+                Convert.ToInt32(nbrToDecrypt.Value), 
+                Convert.ToInt32(txtD.Text), 
+                Convert.ToInt32(txtN.Text)
+                ).ToString());
+
+            MessageBox.Show(Convert.ToInt32(nbrToDecrypt.Value) + " " +
+                Convert.ToInt32(txtD.Text) + " " +
+                Convert.ToInt32(txtN.Text));
+        }
+
+  
     }
 }

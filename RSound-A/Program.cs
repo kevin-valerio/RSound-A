@@ -44,7 +44,10 @@ namespace Encryption
             return PowerModulo(toDecrypt, privateKey, publickey[0]);
         }
 
-
+        public int Decrypt(int toDecrypt, int privateK, int firstPublicKey)
+        {
+            return PowerModulo(toDecrypt, privateK, firstPublicKey);
+        }
 
         public void GenerateKey()
         {
@@ -73,13 +76,16 @@ namespace Encryption
 public class RSAKey
 {
 
-    private static List<int> PrimaryNumbers = new List<int>{
-            74891, 361223, 229283, 217829, 486023, 302759,
-            440773, 4049, 76379, 68501, 250799, 7009547, 265957, 559673, 210823, 7009603, 291979,
-            184997, 387007, 588229, 171427, 290627, 205537, 569809, 318347,
-            116993, 499027, 225509,
-  };
-
+    /* private static List<int> PrimaryNumbers = new List<int>{
+             74891, 361223, 229283, 217829, 486023, 302759,
+             440773, 4049, 76379, 68501, 250799, 7009547, 265957, 559673, 210823, 7009603, 291979,
+             184997, 387007, 588229, 171427, 290627, 205537, 569809, 318347,
+             116993, 499027, 225509,
+   }; */
+    private static List<int> PrimaryNumbers = new List<int>
+    {
+        2,3,5,7,11,13,17,19,23,29,31,37,41,43
+    };
 
     private static int Q;
     private static int P;
@@ -121,8 +127,7 @@ public class RSAKey
 
         Random rnd = new Random();
         while (true) {
-            int e = rnd.Next(0, 100);
-
+            int e = rnd.Next(0, Phi);
             if ((PGCD(e, ((P - 1) * (Q - 1))) == 1) && (e < Phi)) {
                 return e;
 
