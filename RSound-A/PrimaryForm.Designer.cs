@@ -10,11 +10,10 @@
         /// <summary>
         /// Nettoyage des ressources utilisées.
         /// </summary>
-        /// <param name="disposing">true si les ressources managées doivent être supprimées ; sinon, false.</param>
+        /// <param name="disposing">true si les ressources managées doivent être supprimées ; sinon, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -60,6 +59,7 @@
             this.flatLabel2 = new FlatUI.FlatLabel();
             this.flatNumeric1 = new FlatUI.FlatNumeric();
             this.flatGroupBox1 = new FlatUI.FlatGroupBox();
+            this.flatButton4 = new FlatUI.FlatButton();
             this.statusLbl = new FlatUI.FlatAlertBox();
             this.flatLabel1 = new FlatUI.FlatLabel();
             this.importBtn = new FlatUI.FlatButton();
@@ -500,6 +500,7 @@
             // 
             this.flatGroupBox1.BackColor = System.Drawing.Color.Transparent;
             this.flatGroupBox1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+            this.flatGroupBox1.Controls.Add(this.flatButton4);
             this.flatGroupBox1.Controls.Add(this.statusLbl);
             this.flatGroupBox1.Controls.Add(this.flatLabel1);
             this.flatGroupBox1.Controls.Add(this.importBtn);
@@ -507,12 +508,27 @@
             this.flatGroupBox1.Controls.Add(this.btnCrypt);
             this.flatGroupBox1.Controls.Add(this.txtBoxSoundPath);
             this.flatGroupBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.flatGroupBox1.Location = new System.Drawing.Point(84, 49);
+            this.flatGroupBox1.Location = new System.Drawing.Point(71, 55);
             this.flatGroupBox1.Name = "flatGroupBox1";
             this.flatGroupBox1.ShowText = true;
-            this.flatGroupBox1.Size = new System.Drawing.Size(366, 245);
+            this.flatGroupBox1.Size = new System.Drawing.Size(412, 245);
             this.flatGroupBox1.TabIndex = 17;
             this.flatGroupBox1.Text = "Import your sound";
+            // 
+            // flatButton4
+            // 
+            this.flatButton4.BackColor = System.Drawing.Color.Transparent;
+            this.flatButton4.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.flatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.flatButton4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatButton4.Location = new System.Drawing.Point(187, 177);
+            this.flatButton4.Name = "flatButton4";
+            this.flatButton4.Rounded = false;
+            this.flatButton4.Size = new System.Drawing.Size(154, 32);
+            this.flatButton4.TabIndex = 36;
+            this.flatButton4.Text = "Decrypt the sound";
+            this.flatButton4.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.flatButton4.Click += new System.EventHandler(this.flatButton4_Click_1);
             // 
             // statusLbl
             // 
@@ -533,7 +549,7 @@
             this.flatLabel1.BackColor = System.Drawing.Color.Transparent;
             this.flatLabel1.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.flatLabel1.ForeColor = System.Drawing.Color.White;
-            this.flatLabel1.Location = new System.Drawing.Point(187, 167);
+            this.flatLabel1.Location = new System.Drawing.Point(17, 166);
             this.flatLabel1.Name = "flatLabel1";
             this.flatLabel1.Size = new System.Drawing.Size(154, 20);
             this.flatLabel1.TabIndex = 21;
@@ -545,7 +561,7 @@
             this.importBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.importBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.importBtn.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.importBtn.Location = new System.Drawing.Point(17, 132);
+            this.importBtn.Location = new System.Drawing.Point(17, 131);
             this.importBtn.Name = "importBtn";
             this.importBtn.Rounded = false;
             this.importBtn.Size = new System.Drawing.Size(154, 32);
@@ -560,7 +576,7 @@
             this.checkExportSound.Checked = true;
             this.checkExportSound.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkExportSound.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.checkExportSound.Location = new System.Drawing.Point(191, 196);
+            this.checkExportSound.Location = new System.Drawing.Point(21, 189);
             this.checkExportSound.Name = "checkExportSound";
             this.checkExportSound.Options = FlatUI.FlatToggle._Options.Style2;
             this.checkExportSound.Size = new System.Drawing.Size(76, 33);
@@ -573,7 +589,7 @@
             this.btnCrypt.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.btnCrypt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCrypt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrypt.Location = new System.Drawing.Point(187, 132);
+            this.btnCrypt.Location = new System.Drawing.Point(187, 131);
             this.btnCrypt.Name = "btnCrypt";
             this.btnCrypt.Rounded = false;
             this.btnCrypt.Size = new System.Drawing.Size(154, 32);
@@ -689,6 +705,6 @@
         private FlatUI.FlatLabel flatLabel14;
         private FlatUI.FlatTextBox txtN;
         private FlatUI.FlatLabel lblD;
+        private FlatUI.FlatButton flatButton4;
     }
 }
-

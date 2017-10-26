@@ -1,15 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Numerics;
 using System.Windows.Forms;
 
 namespace RSound_A
 {
     static class Program
     {
-
         [STAThread]
         static void Main()
         {
@@ -52,7 +49,7 @@ namespace Encryption
 
         public void GenerateKey()
         {
- 
+
             RSAKey RSAKey = new RSAKey();
             publickey = RSAKey.GetPublicKey();
 
@@ -65,7 +62,7 @@ namespace Encryption
             //Calcul de c = M^e [mod]
             //Fonctionne
             int c = M;
-            for (int a = 1; a < e; ++a) 
+            for (int a = 1; a < e; ++a)
                 c = (M * c) % mod;
             return c;
         }
@@ -96,44 +93,41 @@ public class RSAKey
 
     public RSAKey()
     {
- 
-        Q = GetRandomPrimaryNumber();
-        P = GetRandomPrimaryNumber();
+
+        while (P == Q) {
+            Q = GetRandomPrimaryNumber();
+            P = GetRandomPrimaryNumber();
+        }
+
         N = (Q * P);
         Phi = (P - 1) * (Q - 1);
-
         E = GetEncryptionExponent();
 
 
-     }
+    }
 
     private static int GetRandomPrimaryNumber()
     {
-        //Fonctionne
-
         return PrimaryNumbers[new Random().Next(0, PrimaryNumbers.Count)];
     }
 
- 
+
 
     private static int PGCD(int a, int b)
     {
-        //Fonctionne
 
         int modulo = a % b;
         if (modulo == 0) return b;
         return PGCD(b, modulo);
 
-
     }
 
     private static int GetEncryptionExponent()
     {
-        //FOnctionne
         Random rnd = new Random();
         while (true) {
             int e = rnd.Next(0, Phi);
-            if ((PGCD(e, Phi) == 1) ) {
+            if ((PGCD(e, Phi) == 1)) {
                 return e;
 
             }
@@ -144,8 +138,7 @@ public class RSAKey
 
     public List<int> GetPublicKey()
     {
-
-       return new List<int> { N, E };
+        return new List<int> { N, E };
     }
 
     public int GetPrivateKey()
@@ -154,7 +147,7 @@ public class RSAKey
     }
 
     public static int modInverse(int X, int Y)
-    { 
+    {
         /* RAPPORT :
         *
         * Quel est le projet
@@ -170,79 +163,76 @@ public class RSAKey
         * 10min presentation, 5min questions
         */
 
-        List<List<int>> MatriceOperation =  new List<List<int>>();
+        List<List<int>> MatriceOperation = new List<List<int>>();
 
-            int a, b, q, r;
+        int a, b, q, r;
 
-            a = X;
-            b = Y;
+        a = X;
+        b = Y;
+        r = a % b;
+        q = a / b;
+
+        while (true) {
+
+            List<int> futureLigne = new List<int>();
+            a = b;
+            b = r;
             r = a % b;
             q = a / b;
+            futureLigne.Add(a);
+            futureLigne.Add(q);
+            futureLigne.Add(b);
+            futureLigne.Add(r);
+            MatriceOperation.Add(futureLigne);
+            if (r == 0) break;
 
-            while (true)
-            {
+        }
 
-                List<int> futureLigne = new List<int>();
-                a = b;
-                b = r;
-                r = a % b;
-                q = a / b;
-                futureLigne.Add(a);
-                futureLigne.Add(q);
-                futureLigne.Add(b);
-                futureLigne.Add(r);
-                MatriceOperation.Add(futureLigne);
-                if (r == 0) break;
+        int nombreEtape = MatriceOperation.Count();
+        int A, B, U, V = 0;
 
-            }
+        for (int i = 0; i < nombreEtape - 1; ++i) {
 
-            int nombreEtape = MatriceOperation.Count();
-            int A, B, U, V = 0;
+            a = MatriceOperation[i][0];
+            q = MatriceOperation[i][1];
+            b = MatriceOperation[i][2];
+            r = MatriceOperation[i][3];
+        }
 
-            for (int i = 0; i < nombreEtape - 1; ++i)
-            {
+        /*
+                 a[i]     q[i]    b[i]    r[i]
+        0        1000   =  3  ×   257  +  229
+        1        257   =   1  ×   229  +   28
+        2        229   =   8  ×    28  +    5
+        3        28   =    5  ×     5  +    3
+        4        5   =     1  ×     3  +    2
+        5        3   =     1  ×     2  +    1
+        6        2   =     2  ×     1  +    0
+       */
 
-                a = MatriceOperation[i][0];
-                q = MatriceOperation[i][1];
-                b = MatriceOperation[i][2];
-                r = MatriceOperation[i][3];
-            }
+        V = 1;
+        A = MatriceOperation[nombreEtape - 2][2];
+        U = -(MatriceOperation[nombreEtape - 2][1]);
+        B = MatriceOperation[nombreEtape - 2][0];
 
-            /*
-                     a[i]     q[i]    b[i]    r[i]
-            0        1000   =  3  ×   257  +  229
-            1        257   =   1  ×   229  +   28
-            2        229   =   8  ×    28  +    5
-            3        28   =    5  ×     5  +    3
-            4        5   =     1  ×     3  +    2
-            5        3   =     1  ×     2  +    1
-            6        2   =     2  ×     1  +    0
-           */
+        int cpt = nombreEtape - 1;
+        while (cpt != 1) {
+            --cpt;
 
-            V = 1;
-            A = MatriceOperation[nombreEtape - 2][2];
-            U = -(MatriceOperation[nombreEtape - 2][1]);
-            B = MatriceOperation[nombreEtape - 2][0];
+            int tmpV = V;
+            int tmpB = B;
+            int tmpU = U;
 
-            int cpt = nombreEtape - 1;
-            while (cpt != 1)
-            {
-                --cpt;
+            B = MatriceOperation[cpt - 1][0];
+            V = tmpU;
+            A = tmpB;
+            U = tmpV - (MatriceOperation[cpt - 1][1]) * U;
+        }
+        if (U < 0) {
 
-                int tmpV = V;
-                int tmpB = B;
-                int tmpU = U;
-
-                B = MatriceOperation[cpt - 1][0];
-                V = tmpU;
-                A = tmpB;
-                U = tmpV - (MatriceOperation[cpt - 1][1]) * U;
-            }
-            if (U < 0) {
-
-                for (int k = 0; U < 0; ++k)
-                    U = U + k * B;
-            }
-            return U;
+            for (int k = 0; U < 0; ++k)
+                U = U + k * B;
+        }
+        return U;
     }
 }

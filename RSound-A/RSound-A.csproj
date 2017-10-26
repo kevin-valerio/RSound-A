@@ -38,6 +38,9 @@
     <Reference Include="FlatUI">
       <HintPath>..\..\..\FlatUI.dll</HintPath>
     </Reference>
+    <Reference Include="Melanchall.DryWetMidi">
+      <HintPath>libs\Melanchall.DryWetMidi.dll</HintPath>
+    </Reference>
     <Reference Include="NAudio, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>libs\NAudio.dll</HintPath>
@@ -67,6 +70,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="PrimaryForm.resx">
       <DependentUpon>PrimaryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,6 +98,9 @@
   <ItemGroup>
     <Content Include="icon.ico" />
     <None Include="Resources\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
